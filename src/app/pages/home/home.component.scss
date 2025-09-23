@@ -1,0 +1,283 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$gradient-start: #667eea;
+$gradient-end: #764ba2;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$border-radius: 12px;
+$transition: all 0.3s ease;
+
+// Mixins
+@mixin gradient-text {
+    background: linear-gradient(45deg, $gradient-start, $gradient-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin card-hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px $shadow-medium;
+}
+
+// Global styles
+.home-container {
+    overflow-x: hidden;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.section-title {
+    font-weight: 700;
+    color: $primary-color;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(45deg, $gradient-start, $gradient-end);
+        border-radius: 2px;
+    }
+}
+
+.text-gradient {
+    @include gradient-text;
+}
+
+// Hero Section
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+    .hero-content {
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    .hero-actions {
+        .btn {
+            transition: $transition;
+            box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba($primary-color, 0.4);
+            }
+        }
+    }
+
+    .hero-image {
+        .profile-circle {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba($primary-color, 0.1), rgba($gradient-end, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, $gradient-start, $gradient-end);
+                z-index: -1;
+                opacity: 0.3;
+                animation: pulse 2s infinite;
+            }
+
+            i {
+                font-size: 8rem;
+            }
+        }
+    }
+}
+
+// Tech Section
+.tech-section {
+    .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .tech-item {
+        text-align: center;
+    }
+
+    .tech-card {
+        background: white;
+        padding: 25px 15px;
+        border-radius: $border-radius;
+        box-shadow: 0 4px 15px $shadow-light;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover {
+            @include card-hover;
+        }
+
+        .tech-icon {
+            font-size: 2.5rem;
+            color: $primary-color;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .tech-name {
+            font-weight: 600;
+            color: $secondary-color;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// CTA Section
+.cta-section {
+    background: linear-gradient(135deg, $primary-color, $gradient-end);
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="1000,100 1000,0 0,100"/></svg>');
+        background-size: cover;
+    }
+
+    .cta-actions {
+        .btn {
+            transition: $transition;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+// Animations
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .hero-section {
+        .hero-image {
+            margin-top: 2rem;
+
+            .profile-circle {
+                width: 200px;
+                height: 200px;
+
+                i {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+
+    .tech-section {
+        .tech-grid {
+            gap: 15px;
+        }
+
+        .tech-card {
+            padding: 20px 10px;
+
+            .tech-icon {
+                font-size: 2rem;
+            }
+
+            .tech-name {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-content {
+        text-align: center;
+
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content {
+        h1 {
+            font-size: 2rem;
+        }
+
+        .lead {
+            font-size: 1rem;
+        }
+    }
+
+    .hero-actions {
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .cta-actions {
+        .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section py-5" [@fadeIn]>
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold text-primary mb-3">
+                            Xin chào, tôi là
+                            <span class="text-gradient">{{ data.profession }}</span>
+                        </h1>
+                        <p class="lead text-muted mb-4">{{ data.bio }}</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-lg me-3 mb-2" routerLink="/projects">
+                                <i class="bi bi-folder2-open me-2"></i>
+                                Xem Dự Án
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg mb-2" routerLink="/contact">
+                                <i class="bi bi-envelope me-2"></i>
+                                Liên Hệ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <div class="profile-circle">
+                            <i class="bi bi-person-circle display-1 text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-section py-5 bg-light" [@fadeIn]>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Công Nghệ Chính</h2>
+                    <p class="text-muted">Các công nghệ tôi thường xuyên sử dụng</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="tech-grid">
+                        <div
+                            class="tech-item"
+                            *ngFor="let tech of data.highlightedTech; trackBy: trackByTechName"
+                            [@fadeIn]
+                        >
+                            <div class="tech-card">
+                                <i [class]="tech.icon + ' tech-icon'"></i>
+                                <span class="tech-name">{{ tech.name }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="projects-section py-5" [@fadeIn]>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="section-title">Dự Án Nổi Bật</h2>
+                    <p class="text-muted">Một số dự án tiêu biểu tôi đã thực hiện</p>
+                </div>
+            </div>
+
+            <app-projects-list [projects]="data.highlightedProjects"> </app-projects-list>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-primary text-white" [@fadeIn]>
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Sẵn sàng hợp tác?</h2>
+                    <p class="lead mb-4">
+                        Tôi luôn tìm kiếm những cơ hội mới để tạo ra những sản phẩm tuyệt vời. Hãy liên hệ để thảo luận
+                        về dự án của bạn!
+                    </p>
+                    <div class="cta-actions">
+                        <button class="btn btn-light btn-lg me-3 mb-2" routerLink="/contact">
+                            <i class="bi bi-envelope me-2"></i>
+                            Liên Hệ Ngay
+                        </button>
+                        <button class="btn btn-outline-light btn-lg mb-2" routerLink="/about">
+                            <i class="bi bi-person me-2"></i>
+                            Tìm Hiểu Thêm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

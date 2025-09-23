@@ -1,0 +1,242 @@
+<div class="about-container">
+    <!-- Hero Section with Personal Info -->
+    <section class="about-hero py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <div class="profile-wrapper">
+                        <img
+                            [src]="personalData.profileImage"
+                            [alt]="personalData.name"
+                            class="profile-image img-fluid"
+                        />
+                        <div class="profile-overlay">
+                            <div class="social-links">
+                                <a [href]="personalData.github" target="_blank" class="social-link" title="GitHub">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                                <a [href]="personalData.linkedin" target="_blank" class="social-link" title="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                                <a [href]="personalData.facebook" target="_blank" class="social-link" title="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="about-intro">
+                        <h1 class="display-4 fw-bold text-primary mb-3">{{ personalData.name }}</h1>
+                        <h2 class="h4 text-muted mb-4">{{ personalData.profession }}</h2>
+                        <p class="lead mb-4">{{ personalData.description }}</p>
+
+                        <!-- Contact Info Grid -->
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="bi bi-geo-alt contact-icon"></i>
+                                <div>
+                                    <strong>Địa chỉ</strong>
+                                    <p class="mb-0 text-muted">{{ personalData.location }}</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-envelope contact-icon"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p class="mb-0">
+                                        <a [href]="'mailto:' + personalData.email" class="text-decoration-none">
+                                            {{ personalData.email }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-phone contact-icon"></i>
+                                <div>
+                                    <strong>Điện thoại</strong>
+                                    <p class="mb-0">
+                                        <a [href]="'tel:' + personalData.phone" class="text-decoration-none">
+                                            {{ personalData.phone }}
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="bi bi-calendar contact-icon"></i>
+                                <div>
+                                    <strong>Ngày sinh</strong>
+                                    <p class="mb-0 text-muted">{{ personalData.birthday }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="biography-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="section-header text-center mb-5">
+                        <h2 class="section-title">Tiểu sử</h2>
+                        <p class="text-muted">Hành trình trở thành developer của tôi</p>
+                    </div>
+
+                    <div class="biography-content">
+                        <img
+                            [src]="aboutData.personalImage"
+                            [alt]="personalData.name"
+                            class="personal-image float-start me-4 mb-3 d-none d-md-block"
+                        />
+                        <div class="biography-text">
+                            <p class="lead">{{ getBiographyParagraphs()[0] }}</p>
+                            <p>{{ getBiographyParagraphs()[1] }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Goals Section -->
+    <section class="experience-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="content-card h-100">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="bi bi-briefcase me-2 text-primary"></i>
+                                Kinh nghiệm
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="experience-text">
+                                <p *ngFor="let paragraph of getExperienceParagraphs()">{{ paragraph }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="content-card h-100">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="bi bi-target me-2 text-primary"></i>
+                                Mục tiêu nghề nghiệp
+                            </h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="goals-text">
+                                <p *ngFor="let paragraph of getCareerGoalsParagraphs()">{{ paragraph }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header text-center mb-5">
+                        <h2 class="section-title">Học vấn</h2>
+                    </div>
+
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <div class="education-content">
+                            <div class="education-text">
+                                <p *ngFor="let paragraph of getEducationParagraphs()">{{ paragraph }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values & Hobbies Section -->
+    <section class="values-hobbies-section py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="values-card">
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-heart me-2 text-danger"></i>
+                            Giá trị cốt lõi
+                        </h3>
+                        <div class="values-grid">
+                            <div class="value-item" *ngFor="let value of aboutData.values; trackBy: trackByValue">
+                                <i class="bi bi-check-circle value-icon"></i>
+                                <span>{{ value }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hobbies-card">
+                        <h3 class="card-title mb-4">
+                            <i class="bi bi-palette me-2 text-success"></i>
+                            Sở thích
+                        </h3>
+                        <div class="hobbies-grid">
+                            <div class="hobby-item" *ngFor="let hobby of aboutData.hobbies; trackBy: trackByHobby">
+                                <i class="bi bi-star hobby-icon"></i>
+                                <span>{{ hobby }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Dòng thời gian</h2>
+                <p class="text-muted">Các mốc quan trọng trong sự nghiệp</p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <div class="timeline">
+                    <div
+                        class="timeline-item"
+                        *ngFor="let item of aboutData.timeline; let i = index; trackBy: trackByTimelineYear"
+                        [class.timeline-left]="i % 2 === 0"
+                        [class.timeline-right]="i % 2 !== 0"
+                    >
+                        <div class="timeline-marker">
+                            <span class="year">{{ item.year }}</span>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <h4 class="timeline-title">{{ item.title }}</h4>
+                                <p class="timeline-description">{{ item.description }}</p>
+                                <div class="timeline-year-mobile d-md-none">
+                                    <span class="badge bg-primary">{{ item.year }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

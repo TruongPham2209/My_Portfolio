@@ -1,0 +1,186 @@
+<!-- Modal Template -->
+<ng-template #projectDetailModal let-modal>
+    <div class="modal-header border-0">
+        <h4 class="modal-title fw-bold text-primary" id="modal-title">
+            <i class="bi bi-folder2-open me-2"></i>
+            {{ project?.title }}
+        </h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+    </div>
+
+    <div class="modal-body p-0" *ngIf="project">
+        <!-- Project Image -->
+        <div class="project-hero">
+            <img [src]="project.thumbnail" [alt]="project.title" class="img-fluid w-100 project-main-image" />
+            <div class="project-hero-overlay">
+                <div class="project-links">
+                    <a
+                        *ngIf="project.backendGithubUrl"
+                        [href]="project.backendGithubUrl"
+                        target="_blank"
+                        class="btn btn-outline-light me-2"
+                        title="View on GitHub (BE)"
+                    >
+                        <i class="bi bi-github me-1"></i>
+                        GitHub (BE)
+                    </a>
+
+                    <a
+                        *ngIf="project.frontendGithubUrl"
+                        [href]="project.frontendGithubUrl"
+                        target="_blank"
+                        class="btn btn-outline-light me-2"
+                        title="View on GitHub (FE)"
+                    >
+                        <i class="bi bi-github me-1"></i>
+                        GitHub (FE)
+                    </a>
+
+                    <a
+                        *ngIf="project.liveUrl"
+                        [href]="project.liveUrl"
+                        target="_blank"
+                        class="btn btn-outline-light me-2"
+                        title="Live Demo"
+                    >
+                        <i class="bi bi-box-arrow-up-right me-1"></i>
+                        Live Demo
+                    </a>
+                    <a
+                        *ngIf="project.youtubeUrl"
+                        [href]="project.youtubeUrl"
+                        target="_blank"
+                        class="btn btn-outline-light"
+                        title="Video Demo"
+                    >
+                        <i class="bi bi-play-circle me-1"></i>
+                        Video
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-content p-4">
+            <!-- Project Info -->
+            <div class="row mb-4">
+                <div class="col-md-8">
+                    <h5 class="text-muted mb-2">Mô tả chi tiết</h5>
+                    <p class="lead" [innerHTML]="project.longDescription"></p>
+                </div>
+                <div class="col-md-4">
+                    <div class="project-meta">
+                        <div class="meta-item mb-3">
+                            <h6 class="text-muted mb-1">
+                                <i class="bi bi-diagram-3 me-1"></i>
+                                Kiến trúc
+                            </h6>
+                            <span class="badge bg-secondary">{{ project.architecture }}</span>
+                        </div>
+                        <div class="meta-item mb-3">
+                            <h6 class="text-muted mb-1">
+                                <i class="bi bi-star me-1"></i>
+                                Trạng thái
+                            </h6>
+                            <span [class]="'badge ' + (project.featured ? 'bg-warning' : 'bg-info')">
+                                {{ project.featured ? 'Nổi bật' : 'Thường' }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies Used -->
+            <div class="technologies-section mb-4">
+                <h5 class="text-primary mb-3">
+                    <i class="bi bi-gear me-2"></i>
+                    Công nghệ sử dụng
+                </h5>
+                <div class="row">
+                    <div
+                        class="col-md-6 col-lg-4 mb-3"
+                        *ngFor="let tech of project.technologies; trackBy: trackByTechName"
+                        [@fadeInTech]
+                    >
+                        <div class="tech-detail-card">
+                            <div class="d-flex flex-column">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="tech-icon-wrapper me-3">
+                                        <img src="{{ tech.svg }}" alt="{{ tech.name }}" />
+                                    </div>
+                                    <h6 class="mb-1 fw-bold">{{ tech.name }}</h6>
+                                </div>
+                                <div class="ms-2">
+                                    <small class="text-muted">{{ tech.description }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Stats/Additional Info -->
+            <div
+                class="project-stats"
+                *ngIf="project.backendGithubUrl || project.liveUrl || project.youtubeUrl || project.frontendGithubUrl"
+            >
+                <hr class="my-4" />
+                <div class="row text-center">
+                    <div class="col-4" *ngIf="project.backendGithubUrl">
+                        <div class="stat-item">
+                            <i class="bi bi-code-slash display-6 text-primary"></i>
+                            <p class="mb-0 mt-2 small text-muted">Open Source (BE)</p>
+                        </div>
+                    </div>
+                    <div class="col-4" *ngIf="project.frontendGithubUrl">
+                        <div class="stat-item">
+                            <i class="bi bi-code-slash display-6 text-info"></i>
+                            <p class="mb-0 mt-2 small text-muted">Open Source (FE)</p>
+                        </div>
+                    </div>
+                    <div class="col-4" *ngIf="project.liveUrl">
+                        <div class="stat-item">
+                            <i class="bi bi-globe display-6 text-success"></i>
+                            <p class="mb-0 mt-2 small text-muted">Live Demo</p>
+                        </div>
+                    </div>
+                    <div class="col-4" *ngIf="project.youtubeUrl">
+                        <div class="stat-item">
+                            <i class="bi bi-camera-video display-6 text-danger"></i>
+                            <p class="mb-0 mt-2 small text-muted">Video Demo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer border-0 bg-light">
+        <div class="w-100 d-flex justify-content-between align-items-center">
+            <div class="project-footer-links">
+                <a
+                    *ngIf="project?.backendGithubUrl"
+                    [href]="project?.backendGithubUrl"
+                    target="_blank"
+                    class="btn btn-outline-dark btn-sm me-2"
+                >
+                    <i class="bi bi-github me-1"></i>
+                    Source Code (BE)
+                </a>
+                <a
+                    *ngIf="project?.frontendGithubUrl"
+                    [href]="project?.frontendGithubUrl"
+                    target="_blank"
+                    class="btn btn-outline-dark btn-sm me-2"
+                >
+                    <i class="bi bi-github me-1"></i>
+                    Source Code (FE)
+                </a>
+                <a *ngIf="project?.liveUrl" [href]="project?.liveUrl" target="_blank" class="btn btn-primary btn-sm">
+                    <i class="bi bi-box-arrow-up-right me-1"></i>
+                    Xem Demo
+                </a>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" (click)="modal.close()">Đóng</button>
+        </div>
+    </div>
+</ng-template>

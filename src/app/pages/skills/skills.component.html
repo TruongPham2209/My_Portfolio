@@ -1,0 +1,65 @@
+<div class="skills-section container py-5">
+    <div class="row">
+        <!-- Technical Skills -->
+        <div class="col-lg-8 mb-5">
+            <h2 class="text-primary mb-4">Technical Skills</h2>
+
+            <div class="row">
+                <div *ngFor="let category of skillData.technicalSkills" class="col-md-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-header bg-light">
+                            <div class="d-flex align-items-center">
+                                <i class="{{ category.icon }} me-2 text-primary"></i>
+                                <h5 class="card-title mb-0">{{ category.name }}</h5>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div *ngFor="let tech of category.technologies" class="skill-item mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <div class="d-flex align-items-center">
+                                        <img
+                                            src="{{ tech.svg }}"
+                                            alt="{{ tech.name }}"
+                                            class="me-2"
+                                            style="width: 1em; height: 1em"
+                                        />
+                                        <span class="fw-medium">{{ tech.name }}</span>
+                                    </div>
+                                    <span class="badge bg-primary">{{ tech.level }}/10</span>
+                                </div>
+                                <div class="progress" style="height: 8px">
+                                    <div
+                                        class="progress-bar bg-primary"
+                                        [style.width]="tech.level * 10 + '%'"
+                                        role="progressbar"
+                                        [attr.aria-valuenow]="tech.level"
+                                        aria-valuemin="0"
+                                        aria-valuemax="10"
+                                    ></div>
+                                </div>
+                                <small class="text-muted d-block mt-1">{{ tech.description }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="col-lg-4">
+            <h2 class="text-success mb-4">Soft Skills</h2>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="card-title mb-0">Personal Skills</h5>
+                </div>
+                <div class="card-body">
+                    <div *ngFor="let skill of skillData.softSkills" class="soft-skill-item mb-3 p-3 bg-light rounded">
+                        <h6 class="text-success mb-2">{{ skill.name }}</h6>
+                        <p class="mb-0 text-muted">{{ skill.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="left-navbar">
+    <div class="profile-section">
+        <div class="profile-image">
+            <img [src]="profileData.profileImage" [alt]="profileData.name" class="img-fluid rounded-circle" />
+        </div>
+        <h4 class="profile-name">{{ profileData.name }}</h4>
+        <p class="profile-title">{{ profileData.profession }}</p>
+    </div>
+
+    <div class="contact-section">
+        <h5>Thông tin liên lạc</h5>
+
+        <a class="contact-item" [href]="profileData.ggMap" target="_blank" rel="noopener">
+            <i class="bi bi-map"></i>
+            <span>{{ profileData.location }}</span>
+        </a>
+
+        <a class="contact-item" [href]="'mailto:' + profileData.email" target="_blank" rel="noopener">
+            <i class="bi bi-envelope-fill"></i>
+            <span>{{ profileData.email }}</span>
+        </a>
+
+        <a class="contact-item" [href]="'tel:' + profileData.phone" target="_blank" rel="noopener">
+            <i class="bi bi-telephone-fill"></i>
+            <span>{{ profileData.phone }}</span>
+        </a>
+    </div>
+</nav>

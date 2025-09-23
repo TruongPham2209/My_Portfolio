@@ -1,0 +1,145 @@
+.projects-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.project-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.featured-card {
+    border: 2px solid #ffc107;
+    background: linear-gradient(145deg, #ffffff 0%, #fff8e1 100%);
+}
+
+.project-thumbnail {
+    transition: transform 0.3s ease;
+    border-radius: 0;
+}
+
+.project-card:hover .project-thumbnail {
+    transform: scale(1.05);
+}
+
+.badge {
+    font-size: 0.75em;
+    padding: 0.375em 0.5em;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-card:hover .project-thumbnail {
+        transform: none;
+    }
+}
+
+/* Custom scrollbar for horizontal scroll on mobile */
+.d-flex.flex-wrap.gap-2 {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff transparent;
+}
+
+.d-flex.flex-wrap.gap-2::-webkit-scrollbar {
+    height: 4px;
+}
+
+.d-flex.flex-wrap.gap-2::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.d-flex.flex-wrap.gap-2::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 2px;
+}
+
+/* Animation for filter buttons */
+.btn-outline-primary,
+.btn-primary {
+    transition: all 0.2s ease;
+}
+
+/* Loading state for images */
+.project-thumbnail {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.project-thumbnail[src] {
+    animation: none;
+    background: none;
+}
+
+/* Badge hover effects */
+.badge.bg-light:hover {
+    background-color: #e9ecef !important;
+    transform: scale(1.05);
+}
+
+/* Card title hover effect */
+.card-title {
+    transition: color 0.2s ease;
+}
+
+.project-card:hover .card-title {
+    color: #007bff;
+}
+
+/* Responsive improvements */
+@media (max-width: 576px) {
+    .btn-sm {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .badge.small {
+        font-size: 0.65em;
+    }
+
+    .card-body {
+        padding: 1rem 0.75rem;
+    }
+}

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse d-flex flex-row" id="navbarNav">
+            <span class="navbar-text"> {{ getCurrentRoute() }} </span>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-row">
+                <li class="nav-item ms-3" *ngFor="let item of navigationItems">
+                    <a class="nav-link" [class.active]="isActive(item.route)" [routerLink]="item.route">
+                        <i [class]="item.icon"></i> {{ item.labelTag }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

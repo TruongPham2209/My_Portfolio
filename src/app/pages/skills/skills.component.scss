@@ -1,0 +1,77 @@
+.skills-section {
+    .card {
+        border: none;
+        border-radius: 12px;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        }
+    }
+
+    .card-header {
+        border-bottom: 2px solid #e9ecef;
+        border-radius: 12px 12px 0 0 !important;
+    }
+
+    .skill-item {
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .progress {
+        border-radius: 10px;
+        background-color: #f8f9fa;
+
+        .progress-bar {
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+    }
+
+    .soft-skill-item {
+        border-left: 4px solid #28a745;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #e8f5e8 !important;
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #007bff, #6c757d);
+            border-radius: 2px;
+        }
+    }
+
+    .text-success::after {
+        background: linear-gradient(90deg, #28a745, #20c997);
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .skills-section {
+        .col-md-6 {
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            margin-bottom: 1rem;
+        }
+    }
+}

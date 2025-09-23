@@ -1,0 +1,121 @@
+<div class="contact-section container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Header Section -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 text-primary fw-bold mb-3">Get In Touch</h1>
+                <p class="lead text-muted">I'm always open to discussing new projects and opportunities</p>
+                <div class="divider mx-auto"></div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="row">
+                <!-- Email -->
+                <div class="col-md-6 mb-4" *ngIf="contactData.email">
+                    <div class="contact-card card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="contact-icon mb-3">
+                                <i class="bi bi-envelope-fill text-primary"></i>
+                            </div>
+                            <h5 class="card-title text-dark">Email</h5>
+                            <p class="card-text text-muted">{{ contactData.email }}</p>
+                            <a href="mailto:{{ contactData.email }}" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-send me-2"></i>Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone -->
+                <div class="col-md-6 mb-4" *ngIf="contactData.phone">
+                    <div class="contact-card card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="contact-icon mb-3">
+                                <i class="bi bi-telephone-fill text-success"></i>
+                            </div>
+                            <h5 class="card-title text-dark">Phone</h5>
+                            <p class="card-text text-muted">{{ contactData.phone }}</p>
+                            <a href="tel:{{ contactData.phone }}" class="btn btn-outline-success btn-sm">
+                                <i class="bi bi-telephone-outbound me-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="social-section mt-5">
+                <h3 class="text-center mb-4 text-dark">Connect With Me</h3>
+                <div class="row justify-content-center">
+                    <!-- GitHub -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" *ngIf="contactData.github">
+                        <a [href]="contactData.github" target="_blank" class="social-link">
+                            <div class="social-card text-center p-3">
+                                <i class="bi bi-github social-icon github"></i>
+                                <span class="d-block mt-2 small">GitHub</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" *ngIf="contactData.linkedin">
+                        <a [href]="contactData.linkedin" target="_blank" class="social-link">
+                            <div class="social-card text-center p-3">
+                                <i class="bi bi-linkedin social-icon linkedin"></i>
+                                <span class="d-block mt-2 small">LinkedIn</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Twitter -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" *ngIf="contactData.twitter">
+                        <a [href]="contactData.twitter" target="_blank" class="social-link">
+                            <div class="social-card text-center p-3">
+                                <i class="bi bi-twitter social-icon twitter"></i>
+                                <span class="d-block mt-2 small">Twitter</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- YouTube -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" *ngIf="contactData.youtube">
+                        <a [href]="contactData.youtube" target="_blank" class="social-link">
+                            <div class="social-card text-center p-3">
+                                <i class="bi bi-youtube social-icon youtube"></i>
+                                <span class="d-block mt-2 small">YouTube</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" *ngIf="contactData.telegram">
+                        <a [href]="contactData.telegram" target="_blank" class="social-link">
+                            <div class="social-card text-center p-3">
+                                <i class="bi bi-telegram social-icon telegram"></i>
+                                <span class="d-block mt-2 small">Telegram</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-section text-center mt-5">
+                <div class="cta-card card bg-primary text-white border-0">
+                    <div class="card-body py-5">
+                        <h3 class="card-title mb-3">Ready to Start a Project?</h3>
+                        <p class="card-text mb-4">Let's work together to bring your ideas to life</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="mailto:{{ contactData.email }}" class="btn btn-light btn-lg">
+                                <i class="bi bi-envelope me-2"></i>Send Message
+                            </a>
+                            <a href="tel:{{ contactData.phone }}" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-telephone me-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

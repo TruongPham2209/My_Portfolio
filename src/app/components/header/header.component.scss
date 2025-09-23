@@ -1,0 +1,47 @@
+.navbar {
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .navbar-brand {
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #007bff;
+        }
+
+        &.active {
+            color: #007bff;
+            font-weight: 600;
+            background-color: rgba(0, 123, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        i {
+            font-size: 1.2rem;
+        }
+    }
+
+    .navbar-text {
+        font-size: 0.9rem;
+        color: #666;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-text {
+        margin-left: 1rem;
+    }
+}

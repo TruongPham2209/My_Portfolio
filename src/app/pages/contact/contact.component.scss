@@ -1,0 +1,131 @@
+.contact-section {
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #007bff, #6c757d);
+        border-radius: 2px;
+    }
+
+    .contact-card {
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+        }
+    }
+
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 50%;
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    .social-section {
+        .social-link {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .social-card {
+            border-radius: 12px;
+            background: #ffffff;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-3px);
+                border-color: #007bff;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .social-icon {
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+
+            &.github {
+                color: #333;
+            }
+            &.linkedin {
+                color: #0077b5;
+            }
+            &.twitter {
+                color: #1da1f2;
+            }
+            &.youtube {
+                color: #ff0000;
+            }
+            &.telegram {
+                color: #0088cc;
+            }
+
+            .social-card:hover & {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .cta-section {
+        .cta-card {
+            border-radius: 20px;
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            box-shadow: 0 15px 40px rgba(0, 123, 255, 0.3);
+
+            .btn {
+                border-radius: 50px;
+                padding: 12px 30px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .contact-section {
+        .display-4 {
+            font-size: 2.5rem;
+        }
+
+        .contact-card {
+            margin-bottom: 1rem;
+        }
+
+        .social-card {
+            padding: 1.5rem !important;
+        }
+
+        .cta-card {
+            .btn {
+                width: 100%;
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
