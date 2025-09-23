@@ -16,11 +16,11 @@ export const routes: Routes = [
             { path: 'contact', component: ContactComponent },
             { path: 'skills', component: SkillsComponent },
             { path: 'projects', component: ProjectsComponent },
+            {
+                path: '**',
+                redirectTo: 'home',
+                pathMatch: 'full',
+            },
         ],
-    },
-    {
-        path: '**',
-        redirectTo: 'home',
-        pathMatch: 'full',
     },
 ];
