@@ -1,7 +1,7 @@
 import { About, PersonalInfo, Skill, Project, Contact, HomeData } from './portfolio.model';
 
 export const personalInfo: PersonalInfo = {
-    name: 'Nguyễn Văn A',
+    name: 'Truong Pham',
     profession: 'Full Stack Developer',
     description: 'Passionate about creating innovative web solutions',
     location: '9 Street, Linh Xuan, Thu Duc City, Ho Chi Minh City',
@@ -9,22 +9,22 @@ export const personalInfo: PersonalInfo = {
     email: 'phamtruong04112004@gmail.com',
     phone: '+84 379497587',
     profileImage: '/images/me.JPG',
-    linkedin: 'https://www.linkedin.com/in/nguyenvana',
-    facebook: 'https://www.facebook.com/nguyenvana',
-    github: 'https://github.com/nguyenvana',
+    linkedin: 'https://www.linkedin.com/in/tr%C6%B0%E1%BB%9Dng-ph%E1%BA%A1m-a77216366/',
+    facebook: 'https://www.facebook.com/truong.pham.127039',
+    github: 'https://github.com/TruongPham2209',
     birthday: '2004-11-04',
 };
 
 export const aboutInfo: About = {
-    biography: 'Là một developer có kỹ năng vững trong việc phát triển ứng dụng web...',
+    biography: 'A developer with solid skills in web application development...',
     experience:
-        'Đã thực hiện nhiều dự án học tập trong quá trình học, xây dựng ứng dụng web full-stack với Spring Boot cho backend và Angular/React cho frontend, trải nghiệm các kiến trúc microservices, caching, và bảo mật.',
+        'Completed multiple academic projects, building full-stack web applications with Spring Boot for backend and Angular/React for frontend, experiencing microservices architectures, caching, and security.',
     careerGoals:
-        'Mong muốn phát triển thành lập trình viên backend/full-stack chuyên sâu về Spring Boot, tham gia vào các dự án thực tế, tối ưu hệ thống và xây dựng giải pháp an toàn, hiệu quả.',
+        'Aspiring to become a specialized backend/full-stack developer focused on Spring Boot, participating in real projects, optimizing systems and building secure, efficient solutions.',
 
     personalImage: '/images/me.JPG',
 
-    education: 'Cử nhân ngành Công nghệ Thông tin, Đại học Tôn Đức Thắng (TDTU), 2022-2026, GPA: 8.1/10',
+    education: 'Bachelor of Information Technology, Ton Duc Thang University (TDTU), 2022-2026, GPA: 8.1/10',
     values: ['Integrity', 'Continuous Learning', 'Collaboration'],
     hobbies: ['Coding', 'Reading Tech Blogs', 'Traveling'],
     timeline: [
@@ -202,72 +202,72 @@ export const contacts: Contact = {
 
 const ecommerceProject: Project = {
     title: 'E-commerce',
-    description: 'Ứng dụng web thương mại điện tử đầy đủ tính năng',
+    description: 'Full-featured e-commerce web application',
     longDescription: `
         <div class="container my-4">
-        <h2 class="mb-4 text-primary fw-bold">Kiến trúc hệ thống</h2>
+        <h2 class="mb-4 text-primary fw-bold">System Architecture</h2>
         <p class="lead">
-            Hệ thống được xây dựng theo mô hình <span class="fw-bold">microservices</span>, 
-            trong đó mỗi dịch vụ phụ trách một phạm vi nghiệp vụ riêng biệt. 
-            Các dịch vụ giao tiếp qua <span class="fst-italic">API Gateway</span>, 
-            <span class="fst-italic">Kafka</span> và <span class="fst-italic">gRPC</span> 
-            để tối ưu hiệu năng và khả năng mở rộng.
+            The system is built on a <span class="fw-bold">microservices</span> model, 
+            where each service handles a separate business domain. 
+            Services communicate via <span class="fst-italic">API Gateway</span>, 
+            <span class="fst-italic">Kafka</span> and <span class="fst-italic">gRPC</span> 
+            to optimize performance and scalability.
         </p>
 
         <div class="row">
             <div class="col-md-6 mb-4">
             <div class="card shadow-sm h-100">
-                <div class="card-header bg-primary text-white fw-bold">Thành phần chính</div>
+                <div class="card-header bg-primary text-white fw-bold">Main Components</div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>Authorization Server:</strong> Quản lý xác thực & phân quyền.</li>
-                <li class="list-group-item"><strong>API Gateway:</strong> Điểm truy cập duy nhất, tích hợp Circuit Breaker & Rate Limiting.</li>
-                <li class="list-group-item"><strong>User Service:</strong> Quản lý thông tin người dùng, hỗ trợ chat 1-1 realtime với bảo mật WebSocket.</li>
-                <li class="list-group-item"><strong>Product Service:</strong> Quản lý sản phẩm, hỗ trợ review.</li>
-                <li class="list-group-item"><strong>Voucher Service:</strong> Quản lý mã giảm giá, khuyến mãi.</li>
-                <li class="list-group-item"><strong>Order Service:</strong> Điều phối quy trình đặt hàng.</li>
-                <li class="list-group-item"><strong>Address Service:</strong> Quản lý địa chỉ giao hàng.</li>
+                <li class="list-group-item"><strong>Authorization Server:</strong> Manages authentication & authorization.</li>
+                <li class="list-group-item"><strong>API Gateway:</strong> Single entry point, integrated with Circuit Breaker & Rate Limiting.</li>
+                <li class="list-group-item"><strong>User Service:</strong> Manages user information, supports 1-1 realtime chat with WebSocket security.</li>
+                <li class="list-group-item"><strong>Product Service:</strong> Manages products, supports reviews.</li>
+                <li class="list-group-item"><strong>Voucher Service:</strong> Manages discount codes and promotions.</li>
+                <li class="list-group-item"><strong>Order Service:</strong> Orchestrates ordering process.</li>
+                <li class="list-group-item"><strong>Address Service:</strong> Manages shipping addresses.</li>
                 </ul>
             </div>
             </div>
 
             <div class="col-md-6 mb-4">
             <div class="card shadow-sm h-100">
-                <div class="card-header bg-success text-white fw-bold">Hạ tầng & Tích hợp</div>
+                <div class="card-header bg-success text-white fw-bold">Infrastructure & Integration</div>
                 <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>Redis:</strong> Cache & session management.</li>
-                <li class="list-group-item"><strong>Kafka:</strong> Event-driven architecture, hỗ trợ bất đồng bộ.</li>
-                <li class="list-group-item"><strong>gRPC:</strong> Giao tiếp nhanh, hiệu quả giữa microservices.</li>
-                <li class="list-group-item"><strong>WebSocket Security:</strong> Bảo mật cho chat realtime.</li>
-                <li class="list-group-item"><strong>Prometheus:</strong> Thu thập metrics, giám sát hệ thống.</li>
-                <li class="list-group-item"><strong>Eureka:</strong> Service discovery, đăng ký và tìm kiếm dịch vụ tự động.</li>
+                <li class="list-group-item"><strong>Kafka:</strong> Event-driven architecture, supports asynchronous processing.</li>
+                <li class="list-group-item"><strong>gRPC:</strong> Fast, efficient communication between microservices.</li>
+                <li class="list-group-item"><strong>WebSocket Security:</strong> Security for realtime chat.</li>
+                <li class="list-group-item"><strong>Prometheus:</strong> Collects metrics, monitors system.</li>
+                <li class="list-group-item"><strong>Eureka:</strong> Service discovery, automatic service registration and discovery.</li>
                 </ul>
             </div>
             </div>
         </div>
 
         <div class="card shadow-sm mb-4">
-            <div class="card-header bg-warning fw-bold">🎯 Các tính năng nổi bật</div>
+            <div class="card-header bg-warning fw-bold">🎯 Key Features</div>
             <div class="card-body">
             <ul class="list-group list-group-numbered">
-                <li class="list-group-item">Đăng ký / đăng nhập với phân quyền bảo mật.</li>
-                <li class="list-group-item">Quản lý sản phẩm, voucher, địa chỉ giao hàng.</li>
-                <li class="list-group-item">Đặt hàng trực tuyến với quy trình nhiều bước.</li>
-                <li class="list-group-item">Đánh giá sản phẩm và phản hồi trực tiếp.</li>
-                <li class="list-group-item">Chat realtime giữa người dùng với chủ cửa hàng.</li>
-                <li class="list-group-item">Giám sát hệ thống, cân bằng tải, giới hạn request, bảo mật WebSocket.</li>
-                <li class="list-group-item">Sử dụng gRPC cho giao tiếp giữa các microservices.</li>
-                <li class="list-group-item">Ứng dụng kafka cho xử lý sự kiện với kiến trúc EDA.</li>
+                <li class="list-group-item">Registration / login with secure authorization.</li>
+                <li class="list-group-item">Manage products, vouchers, shipping addresses.</li>
+                <li class="list-group-item">Online ordering with multi-step process.</li>
+                <li class="list-group-item">Product reviews and direct feedback.</li>
+                <li class="list-group-item">Realtime chat between users and store owners.</li>
+                <li class="list-group-item">System monitoring, load balancing, rate limiting, WebSocket security.</li>
+                <li class="list-group-item">Using gRPC for communication between microservices.</li>
+                <li class="list-group-item">Applying Kafka for event processing with EDA architecture.</li>
             </ul>
             </div>
         </div>
 
         <div class="alert alert-info">
-            <h4 class="alert-heading">Kết luận</h4>
+            <h4 class="alert-heading">Conclusion</h4>
             <p>
-            Kiến trúc <strong>microservices</strong> giúp hệ thống dễ mở rộng, 
-            tăng khả năng chịu lỗi và linh hoạt trong việc tích hợp thêm dịch vụ. 
-            Việc áp dụng <em>event-driven</em>, <em>caching</em> và <em>service discovery</em> 
-            đảm bảo hiệu suất và khả năng vận hành bền vững.
+            The <strong>microservices</strong> architecture makes the system easy to scale, 
+            increases fault tolerance and flexibility in integrating additional services. 
+            Applying <em>event-driven</em>, <em>caching</em> and <em>service discovery</em> 
+            ensures performance and sustainable operation.
             </p>
         </div>
         </div>
@@ -276,49 +276,49 @@ const ecommerceProject: Project = {
         {
             name: 'Angular',
             svg: '/images/techs/angular.svg',
-            description: 'Sử dụng Angular để xây dựng các ứng dụng web động kết hợp với Bootstrap 5',
+            description: 'Using Angular to build dynamic web applications combined with Bootstrap 5',
         },
         {
             name: 'Spring Boot',
             svg: '/images/techs/spring.svg',
-            description: 'Sử dụng Spring Boot để xây dựng các dịch vụ backend theo kiến trúc microservices',
+            description: 'Using Spring Boot to build backend services following microservices architecture',
         },
         {
             name: 'PostgreSQL',
             svg: '/images/techs/database.svg',
-            description: 'Sử dụng PostgreSQL cho quản lý cơ sở dữ liệu quan hệ',
+            description: 'Using PostgreSQL for relational database management',
         },
         {
             name: 'Stripe',
             svg: '/images/techs/stripe.svg',
-            description: 'Sử dụng Stripe để tích hợp xử lý thanh toán trực tuyến',
+            description: 'Using Stripe to integrate online payment processing',
         },
         {
             name: 'Kafka & gRPC',
             svg: '/images/techs/kafka.svg',
             description:
-                'Sử dụng Kafka cho xử lý sự kiện theo kiến trúc EDA và gRPC cho giao tiếp giữa các microservices',
+                'Using Kafka for event processing with EDA architecture and gRPC for communication between microservices',
         },
         {
             name: 'Prometheus & Eureka',
             svg: '/images/techs/prometheus.svg',
-            description: 'Sử dụng Prometheus để giám sát hệ thống và Eureka cho service discovery',
+            description: 'Using Prometheus for system monitoring and Eureka for service discovery',
         },
         {
             name: 'Redis',
             svg: '/images/techs/redis.svg',
-            description: 'Sử dụng Redis để lưu trữ cache và cải thiện hiệu suất hệ thống',
+            description: 'Using Redis to store cache and improve system performance',
         },
         {
             name: 'Oauth2 Flow',
             svg: '/images/techs/oauth.svg',
-            description: 'Sử dụng Oauth2 để xác thực và phân quyền người dùng tập trung, đảm bảo an toàn cho hệ thống',
+            description: 'Using OAuth2 for centralized user authentication and authorization, ensuring system security',
         },
         {
             name: 'Cloudinary',
             svg: '/images/techs/cloudinary.svg',
             description:
-                'Sử dụng Cloudinary để lưu trữ và quản lý hình ảnh, video, hỗ trợ tối ưu hóa và phân phối nội dung.',
+                'Using Cloudinary to store and manage images, videos, supporting content optimization and distribution.',
         },
     ],
     thumbnail: '/images/projects/Ecommerce.png',
@@ -331,63 +331,63 @@ const ecommerceProject: Project = {
 
 const elearningProject: Project = {
     title: 'E-learning Platform',
-    description: 'Nền tảng học trực tuyến toàn diện',
+    description: 'Comprehensive online learning platform',
     longDescription: `
     <div class="container my-5">
         <header class="mb-4 text-center">
-            <h2 class="fw-bold text-success">Hệ thống E-Learning Microservices</h2>
+            <h2 class="fw-bold text-success">E-Learning Microservices System</h2>
             <p class="lead text-muted">
-            Một nền tảng học trực tuyến hiện đại, tập trung vào <span class="fw-semibold">khả năng mở rộng</span>, 
-            <span class="fw-semibold">bảo mật</span> và <span class="fw-semibold">trải nghiệm người dùng</span>.
+            A modern online learning platform, focused on <span class="fw-semibold">scalability</span>, 
+            <span class="fw-semibold">security</span> and <span class="fw-semibold">user experience</span>.
             </p>
         </header>
 
         <!-- Các tính năng chính -->
         <section class="mb-5">
-            <h4 class="mb-3"><span class="badge bg-warning text-dark">🔹 Các tính năng chính</span></h4>
+            <h4 class="mb-3"><span class="badge bg-warning text-dark">🔹 Key Features</span></h4>
             <div class="accordion" id="featureAccordion">
             <div class="accordion-item">
                 <h2 class="accordion-header ps-2">
-                    👥 Quản lý người dùng
+                    👥 User Management
                 </h2>
                 <div class="accordion-body">
-                    Hỗ trợ nhiều vai trò: giảng viên, sinh viên, quản trị viên; phân quyền linh hoạt.
+                    Supports multiple roles: instructor, student, administrator; flexible authorization.
                 </div>
             </div>
 
             <div class="accordion-item">
                 <h2 class="accordion-header p-2">
-                    📅 Lịch học & lớp học trực tuyến
+                    📅 Schedule & Online Classes
                 </h2>
                 <div class="accordion-body">
-                    Quản lý thời khóa biểu, lớp học realtime, dễ dàng theo dõi tiến trình.
+                    Manage timetables, realtime classes, easy progress tracking.
                 </div>
             </div>
 
             <div class="accordion-item p-2">
                 <h2 class="accordion-header">
-                    📂 Quản lý tài liệu & bài tập
+                    📂 Document & Assignment Management
                 </h2>
                 <div class="accordion-body">
-                    Tải lên tài liệu, thông báo, bài tập; hỗ trợ nhiều định dạng.
+                    Upload documents, announcements, assignments; supports multiple formats.
                 </div>
             </div>
 
             <div class="accordion-item p-2">
                 <h2 class="accordion-header">
-                    ✅ Nộp bài tập & theo dõi tiến độ
+                    ✅ Assignment Submission & Progress Tracking
                 </h2>
                 <div class="accordion-body">
-                    Sinh viên có thể nộp bài online, giảng viên theo dõi & chấm điểm trực tiếp.
+                    Students can submit assignments online, instructors track & grade directly.
                 </div>
             </div>
 
             <div class="accordion-item p-2">
                 <h2 class="accordion-header">
-                    📊 Quản lý thi cử & lớp học
+                    📊 Exam & Class Management
                 </h2>
                 <div class="accordion-body">
-                    Danh sách thi cấm, điểm danh, và theo dõi lớp học đang diễn ra theo thời gian thực.
+                    Exam ban list, attendance, and real-time ongoing class tracking.
                 </div>
             </div>
             </div>
@@ -396,11 +396,11 @@ const elearningProject: Project = {
         <!-- Kết luận -->
         <section class="text-center">
             <div class="alert alert-success shadow-sm">
-            <h5 class="fw-bold">💡 Kết luận</h5>
+            <h5 class="fw-bold">💡 Conclusion</h5>
             <p>
-                Việc kết hợp <strong>microservices</strong> + <strong>giám sát</strong> + <strong>bảo mật hiện đại</strong> 
-                tạo nên một hệ thống e-learning mạnh mẽ, dễ mở rộng và dễ bảo trì. 
-                Đây là nền tảng tối ưu để triển khai học tập trực tuyến ở quy mô lớn.
+                The combination of <strong>microservices</strong> + <strong>monitoring</strong> + <strong>modern security</strong> 
+                creates a powerful, scalable and maintainable e-learning system. 
+                This is the optimal platform for deploying online learning at scale.
             </p>
             </div>
         </section>
@@ -411,49 +411,49 @@ const elearningProject: Project = {
             name: 'Angular',
             svg: '/images/techs/angular.svg',
             description:
-                'Sử dụng Angular là framework chính để xây dựng giao diện người dùng, kết hợp cùng Bootstrap 5 để tạo trải nghiệm trực quan và thân thiện.',
+                'Using Angular as the main framework to build user interface, combined with Bootstrap 5 to create an intuitive and friendly experience.',
         },
         {
             name: 'Spring Boot',
             svg: '/images/techs/spring.svg',
             description:
-                'Sử dụng Spring Boot để phát triển ứng dụng phía máy chủ, cung cấp API RESTful cho ứng dụng Angular.',
+                'Using Spring Boot to develop server-side applications, providing RESTful API for Angular application.',
         },
         {
             name: 'PostgreSQL',
             svg: '/images/techs/database.svg',
             description:
-                'Sử dụng PostgreSQL làm hệ quản trị cơ sở dữ liệu quan hệ để lưu trữ và quản lý dữ liệu ứng dụng.',
+                'Using PostgreSQL as relational database management system to store and manage application data.',
         },
         {
             name: 'MongoDB',
             svg: '/images/techs/mongodb.svg',
             description:
-                'Sử dụng MongoDB làm hệ quản trị cơ sở dữ liệu NoSQL để lưu trữ dữ liệu liên quan đến logging và các thao tác của người dùng.',
+                'Using MongoDB as NoSQL database management system to store data related to logging and user operations.',
         },
         {
             name: 'gRPC & Kafka',
             svg: '/images/techs/kafka.svg',
             description:
-                'Sử dụng gRPC để giao tiếp hiệu quả giữa các microservices, trong khi Kafka được sử dụng để xử lý các sự kiện bất đồng bộ và truyền thông giữa các dịch vụ.',
+                'Using gRPC for efficient communication between microservices, while Kafka is used to process asynchronous events and communication between services.',
         },
         {
             name: 'Prometheus & Eureka',
             svg: '/images/techs/prometheus.svg',
             description:
-                'Sử dụng Prometheus để giám sát hiệu suất và sức khỏe của các dịch vụ, trong khi Eureka được sử dụng cho service discovery, giúp các microservices tìm và giao tiếp với nhau một cách linh hoạt.',
+                'Using Prometheus to monitor performance and health of services, while Eureka is used for service discovery, helping microservices find and communicate with each other flexibly.',
         },
         {
             name: 'Oauth2 Flow',
             svg: '/images/techs/oauth.svg',
             description:
-                'Sử dụng Oauth2 để xác thực và phân quyền người dùng, đảm bảo an toàn cho các API và dữ liệu nhạy cảm.',
+                'Using OAuth2 for user authentication and authorization, ensuring security for APIs and sensitive data.',
         },
     ],
     thumbnail: '/images/projects/Elearning.png',
-    backendGithubUrl: 'https://github.com/username/ecommerce',
-    frontendGithubUrl: 'https://github.com/username/ecommerce-frontend',
-    youtubeUrl: 'https://youtube.com/watch?v=demo',
+    backendGithubUrl: 'https://github.com/TruongPham2209/Elearning_Spring_Boot/',
+    frontendGithubUrl: 'https://github.com/TruongPham2209/Elearning_Angular/',
+    youtubeUrl: 'https://youtu.be/jr5KcRAUL3M',
     featured: true,
     architecture: 'Microservices',
 };
@@ -465,15 +465,15 @@ const bookingAppProject: Project = {
         <div class="container my-5">
             <!-- Header -->
             <div class="text-center mb-4">
-                <h2 class="fw-bold text-primary">🚀 Booking App - Ứng dụng đặt phòng du lịch</h2>
+                <h2 class="fw-bold text-primary">🚀 Booking App - Travel Booking Application</h2>
                 <p class="lead text-muted">
-                Ứng dụng đặt phòng trực tuyến với <strong>kiến trúc fullstack</strong>, kết hợp 
-                <span class="fw-semibold">Spring Boot</span> (REST API) và 
+                Online booking application with <strong>fullstack architecture</strong>, combining 
+                <span class="fw-semibold">Spring Boot</span> (REST API) and 
                 <span class="fw-semibold">Angular</span> (UI).
                 </p>
             </div>
 
-            <!-- Công nghệ -->
+            <!-- Technologies -->
             <div class="row g-3 mb-5">
                 <div class="col-md-3">
                 <div class="p-3 border rounded shadow-sm bg-light">
@@ -500,28 +500,28 @@ const bookingAppProject: Project = {
             <!-- Demo tính năng -->
             <div class="card shadow-sm mb-4">
                 <div class="card-header bg-success text-white fw-bold">
-                🌐 Demo giao diện web
+                🌐 Web Interface Demo
                 </div>
                 <div class="card-body">
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">✅ Đăng ký, đăng nhập với JWT bảo mật</li>
-                    <li class="list-group-item">✅ Tìm kiếm khách sạn / phòng du lịch</li>
-                    <li class="list-group-item">✅ Đặt phòng và quản lý lịch sử đặt chỗ</li>
-                    <li class="list-group-item">✅ Quản lý chương trình khuyến mãi</li>
-                    <li class="list-group-item">✅ Đánh giá khách sạn / phòng du lịch</li>
-                    <li class="list-group-item">✅ Xem chi tiết phòng với thông tin & hình ảnh trực quan</li>
-                    <li class="list-group-item">✅ Hiệu năng cao nhờ Redis Cache giúp tối ưu tốc độ truy vấn dữ liệu</li>
+                    <li class="list-group-item">✅ Registration, login with JWT security</li>
+                    <li class="list-group-item">✅ Search hotels / travel rooms</li>
+                    <li class="list-group-item">✅ Book rooms and manage booking history</li>
+                    <li class="list-group-item">✅ Manage promotional programs</li>
+                    <li class="list-group-item">✅ Rate hotels / travel rooms</li>
+                    <li class="list-group-item">✅ View room details with information & visual images</li>
+                    <li class="list-group-item">✅ High performance thanks to Redis Cache optimizing data query speed</li>
                 </ul>
                 </div>
             </div>
 
             <!-- Kết luận -->
             <div class="alert alert-info shadow-sm">
-                <h5 class="fw-bold">💡 Kết luận</h5>
+                <h5 class="fw-bold">💡 Conclusion</h5>
                 <p>
-                Booking App là một dự án mẫu kết hợp <strong>Spring Boot</strong> và <strong>Angular</strong> 
-                trong kiến trúc fullstack. Redis được tích hợp như giải pháp <strong>caching</strong> 
-                giúp giảm tải database và cải thiện tốc độ phản hồi, mang đến trải nghiệm tốt hơn cho người dùng.
+                Booking App is a sample project combining <strong>Spring Boot</strong> and <strong>Angular</strong> 
+                in fullstack architecture. Redis is integrated as a <strong>caching</strong> solution 
+                to reduce database load and improve response speed, providing a better user experience.
                 </p>
             </div>
         </div>
@@ -531,31 +531,31 @@ const bookingAppProject: Project = {
             name: 'Angular',
             svg: '/images/techs/angular.svg',
             description:
-                'Sử dụng Angular là framework chính để xây dựng giao diện người dùng, kết hợp cùng Bootstrap 5 để tạo trải nghiệm trực quan và thân thiện.',
+                'Using Angular as the main framework to build user interface, combined with Bootstrap 5 to create an intuitive and friendly experience.',
         },
         {
             name: 'Spring Boot',
             svg: '/images/techs/spring.svg',
             description:
-                'Sử dụng Spring Boot để phát triển ứng dụng phía máy chủ, cung cấp API RESTful cho ứng dụng Angular.',
+                'Using Spring Boot to develop server-side applications, providing RESTful API for Angular application.',
         },
         {
             name: 'PostgreSQL',
             svg: '/images/techs/postgresql.svg',
             description:
-                'Sử dụng PostgreSQL làm hệ quản trị cơ sở dữ liệu quan hệ để lưu trữ và quản lý dữ liệu ứng dụng.',
+                'Using PostgreSQL as relational database management system to store and manage application data.',
         },
         {
             name: 'Redis',
             svg: '/images/techs/redis.svg',
             description:
-                'Sử dụng Redis làm hệ quản trị cơ sở dữ liệu NoSQL để lưu trữ và quản lý dữ liệu phiên, giúp tăng tốc độ truy xuất dữ liệu.',
+                'Using Redis as NoSQL database management system to store and manage session data, helping to increase data access speed.',
         },
         {
             name: 'JWT',
             svg: '/images/techs/jwt.svg',
             description:
-                'Sử dụng JWT để xác thực và phân quyền người dùng, đảm bảo an toàn cho các API và dữ liệu nhạy cảm.',
+                'Using JWT for user authentication and authorization, ensuring security for APIs and sensitive data.',
         },
     ],
     thumbnail: '/images/projects/Booking-app.png',
@@ -575,14 +575,14 @@ const realEstateProject: Project = {
             <div class="text-center mb-5">
                 <h2 class="fw-bold text-primary">🚀 Real Estate Platform</h2>
                 <p class="lead text-muted">
-                Nền tảng đăng tin <strong>mua bán & cho thuê bất động sản</strong>, được phát triển theo 
+                Platform for posting <strong>buying, selling & renting real estate</strong>, developed with 
                 kiến trúc <span class="fw-semibold">microservices</span> hiện đại.
                 </p>
             </div>
 
             <!-- Công nghệ -->
             <section class="mb-5">
-                <h4 class="mb-3"><span class="badge bg-info text-dark">🔹 Công nghệ sử dụng</span></h4>
+                <h4 class="mb-3"><span class="badge bg-info text-dark">🔹 Technologies Used</span></h4>
                 <div class="row g-3">
                 <div class="col-md-3"><div class="p-3 border rounded bg-light shadow-sm">Spring Boot (Java) – Backend</div></div>
                 <div class="col-md-3"><div class="p-3 border rounded shadow-sm">Angular – Frontend</div></div>
@@ -591,19 +591,19 @@ const realEstateProject: Project = {
                 <div class="col-md-3"><div class="p-3 border rounded shadow-sm">Spring Cloud Gateway – API Gateway</div></div>
                 <div class="col-md-3"><div class="p-3 border rounded bg-light shadow-sm">Kafka – Event Streaming</div></div>
                 <div class="col-md-3"><div class="p-3 border rounded shadow-sm">Feign Client – Service-to-Service</div></div>
-                <div class="col-md-3"><div class="p-3 border rounded bg-light shadow-sm">Redis Caching – Hiệu năng</div></div>
+                <div class="col-md-3"><div class="p-3 border rounded bg-light shadow-sm">Redis Caching – Performance</div></div>
                 </div>
             </section>
 
             <!-- Microservices -->
             <section class="mb-5">
-                <h4 class="mb-3"><span class="badge bg-success">⚙️ Các microservices chính</span></h4>
+                <h4 class="mb-3"><span class="badge bg-success">⚙️ Main Microservices</span></h4>
                 <div class="row row-cols-1 row-cols-md-2 g-3">
                 <div class="col">
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Authentication Service</h6>
-                        <p>Xác thực & quản lý phiên đăng nhập người dùng qua OAuth2.</p>
+                        <p>Authentication & user session management via OAuth2.</p>
                     </div>
                     </div>
                 </div>
@@ -611,7 +611,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">User Service</h6>
-                        <p>Quản lý hồ sơ & thông tin người dùng.</p>
+                        <p>Manage user profiles & information.</p>
                     </div>
                     </div>
                 </div>
@@ -619,7 +619,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Property Service</h6>
-                        <p>Quản lý tin đăng bất động sản (mua, bán, cho thuê).</p>
+                        <p>Manage real estate listings (buy, sell, rent).</p>
                     </div>
                     </div>
                 </div>
@@ -627,7 +627,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Media Service</h6>
-                        <p>Lưu trữ & quản lý hình ảnh, video bất động sản.</p>
+                        <p>Store & manage real estate images, videos.</p>
                     </div>
                     </div>
                 </div>
@@ -635,7 +635,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Notification Service</h6>
-                        <p>Gửi thông báo qua email, SMS hoặc realtime event.</p>
+                        <p>Send notifications via email, SMS or realtime event.</p>
                     </div>
                     </div>
                 </div>
@@ -643,7 +643,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Payment Service</h6>
-                        <p>Thanh toán trực tuyến qua thẻ để nâng cấp gói tin, đẩy VIP, quảng cáo.</p>
+                        <p>Online card payment to upgrade listing package, push VIP, advertise.</p>
                     </div>
                     </div>
                 </div>
@@ -651,7 +651,7 @@ const realEstateProject: Project = {
                     <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h6 class="fw-bold">Caching Layer (Redis)</h6>
-                        <p>Lưu cache dữ liệu truy cập thường xuyên (tin nổi bật, danh mục, user info).</p>
+                        <p>Cache frequently accessed data (featured listings, categories, user info).</p>
                     </div>
                     </div>
                 </div>
@@ -660,25 +660,25 @@ const realEstateProject: Project = {
 
             <!-- Luồng hoạt động -->
             <section>
-                <h4 class="mb-3"><span class="badge bg-warning text-dark">📊 Luồng hoạt động</span></h4>
+                <h4 class="mb-3"><span class="badge bg-warning text-dark">📊 Workflow</span></h4>
                 <ol class="list-group list-group-numbered">
-                <li class="list-group-item">Người dùng đăng nhập hệ thống</li>
-                <li class="list-group-item">Đăng tin bất động sản qua Property Service</li>
-                <li class="list-group-item">OAuth2 xác thực & phân quyền</li>
-                <li class="list-group-item">Property Service lưu tin và gửi sự kiện qua Kafka</li>
-                <li class="list-group-item">Notification Service gửi thông báo (Email / SMS / Realtime)</li>
-                <li class="list-group-item">Redis Cache dữ liệu phổ biến để tối ưu hiệu năng</li>
-                <li class="list-group-item">Người dùng có thể thanh toán qua Payment Service để nâng cấp tin đăng</li>
+                <li class="list-group-item">User logs into system</li>
+                <li class="list-group-item">Post real estate listing via Property Service</li>
+                <li class="list-group-item">OAuth2 authentication & authorization</li>
+                <li class="list-group-item">Property Service saves listing and sends event via Kafka</li>
+                <li class="list-group-item">Notification Service sends notifications (Email / SMS / Realtime)</li>
+                <li class="list-group-item">Redis caches popular data to optimize performance</li>
+                <li class="list-group-item">User can pay via Payment Service to upgrade listing</li>
                 </ol>
             </section>
 
             <!-- Kết luận -->
             <div class="alert alert-primary mt-5 shadow-sm">
-                <h5 class="fw-bold">💡 Kết luận</h5>
+                <h5 class="fw-bold">💡 Conclusion</h5>
                 <p>
-                <strong>Real Estate Platform</strong> áp dụng kiến trúc <em>microservices</em> với đầy đủ các công nghệ 
-                hiện đại (Spring Boot, Angular, Kafka, Redis, OAuth2). Hệ thống không chỉ tối ưu hiệu năng, 
-                mà còn dễ mở rộng và duy trì, sẵn sàng cho các nền tảng thương mại bất động sản quy mô lớn.
+                <strong>Real Estate Platform</strong> applies <em>microservices</em> architecture with comprehensive modern technologies 
+                (Spring Boot, Angular, Kafka, Redis, OAuth2). The system not only optimizes performance, 
+                but is also easy to scale and maintain, ready for large-scale real estate commerce platforms.
                 </p>
             </div>
         </div>
@@ -687,38 +687,38 @@ const realEstateProject: Project = {
         {
             name: 'Angular',
             svg: '/images/techs/angular.svg',
-            description: 'Sử dụng Angular để xây dựng các ứng dụng web động kết hợp với Bootstrap 5',
+            description: 'Using Angular to build dynamic web applications combined with Bootstrap 5',
         },
         {
             name: 'Spring Boot',
             svg: '/images/techs/spring.svg',
-            description: 'Sử dụng Spring Boot để phát triển các ứng dụng backend theo kiến trúc microservices',
+            description: 'Using Spring Boot to develop backend applications following microservices architecture',
         },
         {
             name: 'Redis',
             svg: '/images/techs/redis.svg',
-            description: 'Sử dụng Redis để lưu trữ cache và cải thiện hiệu suất hệ thống',
+            description: 'Using Redis to store cache and improve system performance',
         },
         {
             name: 'Stripe',
             svg: '/images/techs/stripe.svg',
-            description: 'Sử dụng Stripe để xử lý thanh toán trực tuyến',
+            description: 'Using Stripe to process online payments',
         },
         {
             name: 'Kafka',
             svg: '/images/techs/kafka.svg',
-            description: 'Sử dụng Kafka để xử lý sự kiện theo kiến trúc EDA và truyền thông giữa các dịch vụ',
+            description: 'Using Kafka to process events with EDA architecture and communication between services',
         },
         {
             name: 'Oauth2 Flow',
             svg: '/images/techs/oauth.svg',
-            description: 'Sử dụng Oauth2 để xác thực và phân quyền người dùng tập trung, đảm bảo an toàn cho hệ thống',
+            description: 'Using OAuth2 for centralized user authentication and authorization, ensuring system security',
         },
         {
             name: 'Eureka & Actuator',
             svg: '/images/techs/Spring_Cloud.png',
             description:
-                'Sử dụng Eureka & Actuator để đăng ký và tìm kiếm dịch vụ tự động, hỗ trợ service discovery trong kiến trúc microservices',
+                'Using Eureka & Actuator for automatic service registration and discovery, supporting service discovery in microservices architecture',
         },
     ],
     thumbnail: '/images/projects/Real-estate.png',
@@ -734,8 +734,8 @@ export const highlightedProjects: Project[] = [ecommerceProject, elearningProjec
 export const projects: Project[] = [ecommerceProject, elearningProject, bookingAppProject, realEstateProject];
 
 export const homeData: HomeData = {
-    profession: 'Lập trình viên Full-stack',
-    bio: 'Tôi có thể đảm nhận cả Frontend và Backend, nhưng thế mạnh nằm ở phát triển hệ thống phía máy chủ với Spring Boot. Tôi tập trung vào việc xây dựng kiến trúc microservices, tối ưu hiệu suất và đảm bảo tính bảo mật cho ứng dụng web.',
+    profession: 'Full-stack Developer',
+    bio: 'I can handle both Frontend and Backend, but my strength lies in developing server-side systems with Spring Boot. I focus on building microservices architecture, optimizing performance and ensuring security for web applications.',
     highlightedTech: [
         {
             name: 'Angular',
