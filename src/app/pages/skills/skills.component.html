@@ -14,7 +14,10 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <div *ngFor="let tech of category.technologies" class="skill-item mb-3">
+                            <div
+                                *ngFor="let tech of getSortedTechnologies(category.technologies)"
+                                class="skill-item mb-3"
+                            >
                                 <div class="d-flex justify-content-between align-items-center mb-1">
                                     <div class="d-flex align-items-center">
                                         <img
@@ -25,16 +28,19 @@
                                         />
                                         <span class="fw-medium">{{ tech.name }}</span>
                                     </div>
-                                    <span class="badge bg-primary">{{ tech.level }}/10</span>
+                                    <span class="badge" [ngClass]="getLevelClass(tech.level)">
+                                        {{ tech.level }}/100
+                                    </span>
                                 </div>
                                 <div class="progress" style="height: 8px">
                                     <div
-                                        class="progress-bar bg-primary"
-                                        [style.width]="tech.level * 10 + '%'"
+                                        class="progress-bar"
+                                        [ngClass]="getLevelClass(tech.level)"
+                                        [style.width]="tech.level + '%'"
                                         role="progressbar"
                                         [attr.aria-valuenow]="tech.level"
                                         aria-valuemin="0"
-                                        aria-valuemax="10"
+                                        aria-valuemax="100"
                                     ></div>
                                 </div>
                                 <small class="text-muted d-block mt-1">{{ tech.description }}</small>

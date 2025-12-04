@@ -139,7 +139,7 @@ export const skillData: Skill = {
                 },
                 {
                     name: 'AWS',
-                    level: 70,
+                    level: 60,
                     svg: '/images/techs/aws.svg',
                     description: 'Experienced in deploying applications on AWS',
                 },

@@ -11,4 +11,14 @@ import { Skill } from '../../models/portfolio.model';
 })
 export class SkillsComponent {
     skillData: Skill = skillData;
+
+    getSortedTechnologies(technologies: any[]): any[] {
+        return technologies.slice().sort((a, b) => b.level - a.level);
+    }
+
+    getLevelClass(level: number): string {
+        if (level <= 30) return 'bg-danger';
+        if (level <= 70) return 'bg-warning';
+        return 'bg-success';
+    }
 }
