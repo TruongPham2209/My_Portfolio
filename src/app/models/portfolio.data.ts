@@ -16,7 +16,8 @@ export const personalInfo: PersonalInfo = {
 };
 
 export const aboutInfo: About = {
-    biography: 'A developer with solid skills in web application development...',
+    biography:
+        'A Backend Developer specializing in Java-based systems with strong expertise in database optimization, cloud infrastructure on AWS, and CI/CD pipelines. Experienced in building scalable, secure, and high-performance backend services.',
     experience:
         'Completed multiple academic projects, building full-stack web applications with Spring Boot for backend and Angular/React for frontend, experiencing microservices architectures, caching, and security.',
     careerGoals:
@@ -34,9 +35,41 @@ export const aboutInfo: About = {
             description: 'Began my journey at the Ton Duc Thang University.',
         },
         {
-            year: '2024',
-            title: 'Freelance Projects',
-            description: 'Worked on various freelance projects, enhancing my full-stack development skills.',
+            year: '06/2024 - 09/2025',
+            title: 'Freelance Software Developer',
+            description: `
+                <div class="mb-3">
+                    <div class="fw-bold">DevOps – Document Upload System (AWS S3)</div>
+                    <ul class="ps-3 mb-2">
+                        <li>Designed a secure file upload backend using AWS S3.</li>
+                        <li>Implemented pre-signed URLs, IAM policies, and lifecycle rules to optimize storage cost.</li>
+                        <li>Integrated S3 with backend APIs and applied user-based access control.</li>
+                        <li>Built CI/CD pipelines and deployed on AWS EC2.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="fw-bold">Web – Course Registration System (NodeJS + Angular)</div>
+                    <ul class="ps-3 mb-0">
+                        <li>Developed RESTful APIs using Node.js (Express).</li>
+                        <li>Implemented JWT authentication with role-based authorization.</li>
+                        <li>Designed relational database schema and deployed on Linux VPS.</li>
+                    </ul>
+                </div>
+                `,
+        },
+        {
+            year: '12/2024 - 02/2026',
+            title: 'IT Engineer (Fresher) - UNICCS Vietnam',
+            description: `
+            <div class="mb-2">
+                <ul class="ps-3 mb-0">
+                    <li>Collaborated with team members to implement features aligned with customer requirements.</li>
+                    <li>Wrote and optimized SQL queries to enhance data retrieval performance.</li>
+                    <li>Supported deployment and maintenance of applications on AWS (EC2, RDS).</li>
+                </ul>
+            </div>
+            `,
         },
     ],
 };

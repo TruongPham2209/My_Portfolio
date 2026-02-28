@@ -227,8 +227,8 @@
                         </div>
                         <div class="timeline-content">
                             <div class="timeline-card">
-                                <h4 class="timeline-title">{{ item.title }}</h4>
-                                <p class="timeline-description">{{ item.description }}</p>
+                                <h4 class="timeline-title text-success">{{ item.title }}</h4>
+                                <p class="timeline-description" [innerHTML]="item.description"></p>
                                 <div class="timeline-year-mobile d-md-none">
                                     <span class="badge bg-primary">{{ item.year }}</span>
                                 </div>
