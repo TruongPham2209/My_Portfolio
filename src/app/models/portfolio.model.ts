@@ -79,6 +79,7 @@ export interface Contact {
     youtube: string;
     telegram: string;
     github: string;
+    facebook: string;
 }
 
 export interface HomeData {

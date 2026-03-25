@@ -9,7 +9,7 @@ export const personalInfo: PersonalInfo = {
     email: 'phamtruong04112004@gmail.com',
     phone: '+84 379497587',
     profileImage: '/images/me.JPG',
-    linkedin: 'https://www.linkedin.com/in/tr%C6%B0%E1%BB%9Dng-ph%E1%BA%A1m-a77216366/',
+    linkedin: 'https://www.linkedin.com/in/truong-pham-backend/',
     facebook: 'https://www.facebook.com/truong.pham.127039',
     github: 'https://github.com/TruongPham2209',
     birthday: '2004-11-04',
@@ -226,11 +226,12 @@ export const skillData: Skill = {
 export const contacts: Contact = {
     email: 'phamtruong04112004@gmail.com',
     phone: '+84 379497587',
-    linkedin: 'https://linkedin.com/in/trường-phạm-a77216366/',
+    linkedin: 'https://www.linkedin.com/in/truong-pham-backend/',
     twitter: 'https://twitter.com/nguyenvana',
     youtube: 'https://www.youtube.com/@Tr%C6%B0%E1%BB%9DngPh%E1%BA%A1m_2209',
-    telegram: 'https://t.me/nguyenvana',
+    telegram: 'https://t.me/truong_pham_backend',
     github: 'https://github.com/TruongPham2209',
+    facebook: 'https://www.facebook.com/truong.pham.127039',
 };
 
 const ecommerceProject: Project = {
