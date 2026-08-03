@@ -1,0 +1,37 @@
+<section id="skills" class="section" aria-label="Skills">
+    <div class="container">
+        <app-section-heading
+            label="Skills"
+            title="Tech Stack"
+            subtitle="Technologies and tools I work with daily"
+        ></app-section-heading>
+
+        <div class="skills-grid">
+            <div
+                *ngFor="let category of categories; trackBy: trackByName; let i = index"
+                class="skill-card card"
+                appScrollReveal
+                [class]="'reveal-delay-' + ((i % 4) + 1)"
+            >
+                <div class="skill-card-header">
+                    <span class="skill-icon">{{ category.icon }}</span>
+                    <h3 class="skill-category-name">{{ category.name }}</h3>
+                </div>
+
+                <div class="skill-tags">
+                    <span
+                        *ngFor="let skill of category.skills"
+                        class="tag"
+                        [ngClass]="category.colorClass"
+                    >
+                        {{ skill }}
+                    </span>
+                </div>
+
+                <p *ngIf="category.description" class="skill-description">
+                    {{ category.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<header
+    class="navbar"
+    [class.scrolled]="isScrolled"
+    role="banner"
+>
+    <div class="navbar-inner">
+        <a class="navbar-brand" (click)="scrollTo('home')" tabindex="0" role="button" aria-label="Go to top">
+            <span class="brand-icon">&lt;/&gt;</span>
+            <span class="brand-name">{{ name }}</span>
+        </a>
+
+        <nav class="navbar-links" [class.mobile-open]="isMobileMenuOpen" role="navigation" aria-label="Main navigation">
+            <button
+                *ngFor="let item of navItems"
+                class="nav-link"
+                [class.active]="activeSection === item.sectionId"
+                (click)="scrollTo(item.sectionId)"
+                [attr.aria-label]="'Navigate to ' + item.label"
+            >
+                {{ item.label }}
+            </button>
+        </nav>
+
+        <button
+            class="mobile-toggle"
+            (click)="toggleMobileMenu()"
+            [attr.aria-expanded]="isMobileMenuOpen"
+            aria-label="Toggle navigation menu"
+        >
+            <span class="hamburger" [class.open]="isMobileMenuOpen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </button>
+    </div>
+</header>

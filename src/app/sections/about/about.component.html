@@ -1,0 +1,57 @@
+<section id="about" class="section section-alt" aria-label="About me">
+    <div class="container">
+        <app-section-heading
+            label="About"
+            title="Who I Am"
+            subtitle="Software engineering background, principles, and education"
+        ></app-section-heading>
+
+        <div class="about-grid">
+            <div class="about-image-col" appScrollReveal>
+                <div class="about-image-wrapper">
+                    <img [src]="info.profileImage" [alt]="info.name + ' profile photo'" class="about-image" loading="lazy" />
+                    <div class="image-decoration"></div>
+                </div>
+            </div>
+
+            <div class="about-content-col">
+                <p class="about-summary" appScrollReveal>{{ summary }}</p>
+
+                <div class="about-highlights">
+                    <div
+                        *ngFor="let item of highlights; let i = index"
+                        class="highlight-card card"
+                        appScrollReveal
+                        [class]="'reveal-delay-' + (i + 1)"
+                    >
+                        <span class="highlight-icon">{{ item.icon }}</span>
+                        <span class="highlight-value">{{ item.value }}</span>
+                        <span class="highlight-label">{{ item.label }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded Education Subsection -->
+        <div class="about-education" appScrollReveal>
+            <div class="education-card card">
+                <div class="edu-header">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-info">
+                        <span class="edu-tag">Education</span>
+                        <h3 class="edu-institution">{{ education.institution }}</h3>
+                        <p class="edu-degree">{{ education.degree }}</p>
+                    </div>
+                    <div class="edu-meta">
+                        <span class="edu-period">{{ education.period }}</span>
+                        <span class="edu-gpa">GPA: {{ education.gpa }}</span>
+                    </div>
+                </div>
+
+                <ul class="edu-highlights">
+                    <li *ngFor="let h of education.highlights">{{ h }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

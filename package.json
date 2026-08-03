@@ -1,10 +1,9 @@
 {
     "name": "my-portfolio",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start-5555": "ng serve --port 5555",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test"
@@ -18,14 +17,7 @@
         "@angular/forms": "^19.2.0",
         "@angular/platform-browser": "^19.2.0",
         "@angular/platform-browser-dynamic": "^19.2.0",
-        "@angular/router": "^19.2.0",
-        "@ng-bootstrap/ng-bootstrap": "^18.0.0",
-        "@ngx-translate/core": "^17.0.0",
-        "@ngx-translate/http-loader": "^17.0.0",
         "@vercel/analytics": "^1.5.0",
-        "bootstrap": "^5.3.7",
-        "bootstrap-icons": "^1.13.1",
-        "prettier": "^3.5.3",
         "rxjs": "~7.8.0",
         "tslib": "^2.3.0",
         "zone.js": "~0.15.0"

@@ -1,0 +1,46 @@
+<section id="experience" class="section section-alt" aria-label="Work experience">
+    <div class="container">
+        <app-section-heading
+            label="Experience"
+            title="Work History"
+            subtitle="Where I've worked and what I've achieved"
+        ></app-section-heading>
+
+        <div class="timeline">
+            <div
+                *ngFor="let exp of experiences; trackBy: trackByCompany; let i = index"
+                class="timeline-item"
+                appScrollReveal
+                [class]="'reveal-delay-' + (i + 1)"
+            >
+                <div class="timeline-marker">
+                    <div class="marker-dot"></div>
+                    <div class="marker-line"></div>
+                </div>
+
+                <div class="timeline-content card">
+                    <div class="exp-header">
+                        <div>
+                            <h3 class="exp-role">{{ exp.role }}</h3>
+                            <p class="exp-company">{{ exp.company }}</p>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-period">{{ exp.period }}</span>
+                            <span class="exp-location" *ngIf="exp.location">{{ exp.location }}</span>
+                        </div>
+                    </div>
+
+                    <ul class="exp-achievements">
+                        <li *ngFor="let achievement of exp.achievements">
+                            {{ achievement }}
+                        </li>
+                    </ul>
+
+                    <div class="exp-tech-stack">
+                        <span *ngFor="let tech of exp.techStack" class="tag">{{ tech }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
