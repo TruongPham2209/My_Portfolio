@@ -159,6 +159,7 @@ export const skillCategories: SkillCategory[] = [
             'Sass/SCSS',
             'JavaScript (ES6+)',
             'TypeScript',
+            'Next.js',
             'Angular',
             'React',
             'Bootstrap',
@@ -179,7 +180,7 @@ export const skillCategories: SkillCategory[] = [
         name: 'Database',
         icon: '🗄️',
         colorClass: 'tag-purple',
-        skills: ['PostgreSQL', 'MySQL', 'Redis', 'MongoDB'],
+        skills: ['PostgreSQL', 'MySQL', 'Redis', 'MongoDB', 'Elasticsearch'],
     },
     {
         name: 'DevOps',
@@ -255,6 +256,46 @@ export const experiences: ExperienceItem[] = [
 // ─── Projects ──────────────────────────────
 
 export const projects: ProjectItem[] = [
+    {
+        title: 'Dev_Edu Platform',
+        overview:
+            'Full-stack online developer education and assessment platform. Features interactive video lectures, real-time code & quiz examinations, livestream sessions, assignment auto-grading, course tracking, and full-text search.',
+        responsibilities: [
+            'Architected full-stack enterprise education platform with Java 21 Spring Boot 3.5 backend and Next.js 16 (App Router) frontend',
+            'Implemented real-time quiz/exam engine with automated grading and PDF report rendering (Flying Saucer)',
+            'Integrated Elasticsearch 8 for instant full-text search across courses, lectures, and discussion forums',
+            'Built event-driven tracking pipeline with Apache Kafka for student progress analytics and metrics',
+            'Designed multi-level caching strategy (Redis 7 + Caffeine) for high-frequency user state management',
+        ],
+        challenges:
+            'Handling high concurrency during live online exams and livestream sessions while maintaining fast full-text search discovery and real-time auto-grading.',
+        solutions:
+            'Implemented multi-tier caching (Redis + Caffeine) and Elasticsearch for fast discovery. Utilized Apache Kafka event streams for asynchronous background processing of student progress, quiz submissions, and analytics metrics.',
+        achievements: [
+            'Architected scalable full-stack platform leveraging Java 21, Spring Boot 3.5, Next.js 16, and React 19',
+            'Reduced search latency to under 50ms using Elasticsearch 8 and Redis multi-level caching',
+            'Achieved real-time progress monitoring using Kafka event-driven streaming',
+            'Configured multi-container orchestration with Docker Compose for seamless deployment',
+        ],
+        techStack: [
+            'Java 21',
+            'Spring Boot 3.5',
+            'Next.js 16',
+            'React 19',
+            'TypeScript',
+            'PostgreSQL',
+            'Redis',
+            'Elasticsearch',
+            'Kafka',
+            'Docker',
+        ],
+        architecture: 'Full Stack / Monolithic',
+        thumbnail: '/images/projects/Dev_Edu.png',
+        backendGithub: 'https://github.com/TruongPham2209/Dev_Edu/tree/master/back-end',
+        frontendGithub: 'https://github.com/TruongPham2209/Dev_Edu/tree/master/front-end',
+        youtubeUrl: 'https://youtu.be/iA4rQmLeQIc',
+        featured: true,
+    },
     {
         title: 'E-Commerce Platform',
         overview:
