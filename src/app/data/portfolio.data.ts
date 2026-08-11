@@ -106,6 +106,7 @@ export const aboutSummary: string =
     `Software Engineer with 2+ years of experience designing and developing modern web applications, scalable distributed systems, and cloud-native solutions. ` +
     `Proficient across both Frontend and Backend engineering, with a disciplined approach to Clean Code, Clean Architecture, and performance optimization. ` +
     `Strong problem-solving mindset with a focus on delivering high-reliability systems and business value. ` +
+    `Experienced in collaborating within Agile/Scrum frameworks using Jira for sprint planning, backlog management, and daily stand-ups. ` +
     `A proactive learner who quickly adapts to new tech stacks and industry standards. ` +
     `Leverages AI-assisted development tools to accelerate workflow efficiency, code quality, and technical documentation without sacrificing engineering rigor.`;
 
@@ -193,6 +194,14 @@ export const skillCategories: SkillCategory[] = [
         icon: '☁️',
         colorClass: 'tag-amber',
         skills: ['AWS EC2', 'AWS S3', 'AWS RDS', 'AWS IAM'],
+    },
+    {
+        name: 'Agile & Project Management',
+        icon: '📋',
+        colorClass: 'tag-amber',
+        skills: ['Agile/Scrum', 'Jira', 'Sprint Planning', 'Daily Stand-ups', 'Kanban', 'Backlog Refinement'],
+        description:
+            'Experienced in working within cross-functional teams in Agile/Scrum environments using Jira for sprint planning, task tracking, and backlog management.',
     },
     {
         name: 'Architecture',
