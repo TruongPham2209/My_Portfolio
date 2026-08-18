@@ -227,11 +227,12 @@ export const experiences: ExperienceItem[] = [
         location: 'Ho Chi Minh City',
         achievements: [
             'Developed full-stack web solutions for QuanQuen platform (quanquen.com), building high-performance backend RESTful APIs with .NET Core and dynamic user interfaces with Angular.',
+            'Implemented an AI-driven chatbot for customer store discovery leveraging RAG (Retrieval-Augmented Generation) architecture and Azure AI services.',
             'Designed and implemented core business modules for menu management, table ordering, invoice generation, and real-time order processing.',
             'Optimized data access and backend services in .NET Core (Entity Framework), maintaining high throughput and low latency under peak operational traffic.',
             'Built responsive, modular Angular components and reactive forms, enhancing user experience and mobile compatibility across restaurant staff terminals.',
         ],
-        techStack: ['.NET Core', 'C#', 'Angular', 'TypeScript', 'Entity Framework', 'REST API', 'SQL Server'],
+        techStack: ['.NET Core', 'C#', 'Angular', 'TypeScript', 'RAG', 'Azure AI', 'Entity Framework', 'REST API', 'SQL Server'],
     },
     {
         company: 'UNICCS Viet Nam Co., Ltd.',
@@ -268,22 +269,23 @@ export const projects: ProjectItem[] = [
     {
         title: 'Dev_Edu Platform',
         overview:
-            'Full-stack online developer education and assessment platform. Features interactive video lectures, real-time code & quiz examinations, livestream sessions, assignment auto-grading, course tracking, and full-text search.',
+            'Full-stack online developer education and assessment platform. Features interactive video lectures, real-time quiz examinations, AI chatbot course recommendations, Firebase FCM push notifications, multi-gateway payments, course tracking, and full-text search.',
         responsibilities: [
-            'Architected full-stack enterprise education platform with Java 21 Spring Boot 3.5 backend and Next.js 16 (App Router) frontend',
-            'Implemented real-time quiz/exam engine with automated grading and PDF report rendering (Flying Saucer)',
-            'Integrated Elasticsearch 8 for instant full-text search across courses, lectures, and discussion forums',
-            'Built event-driven tracking pipeline with Apache Kafka for student progress analytics and metrics',
-            'Designed multi-level caching strategy (Redis 7 + Caffeine) for high-frequency user state management',
+            'Architected full-stack enterprise education platform with Java 21 (Virtual Threads) Spring Boot 3.5 backend and Next.js 16 (App Router) frontend',
+            'Implemented AI Assistant & Chatbot widget powered by OpenAI (gpt-4o-mini & pgvector) for intelligent course recommendations',
+            'Built unified real-time notification system with Kafka event streaming and Firebase Cloud Messaging (FCM v12) push notifications',
+            'Engineered comprehensive quiz/exam engine supporting autosave, essay grading UI, exam matrix, Excel question import, and duplication',
+            'Integrated Elasticsearch 8 for full-text search, Cloudflare R2 object storage, and Redis 7 + Caffeine multi-level caching',
         ],
         challenges:
-            'Handling high concurrency during live online exams and livestream sessions while maintaining fast full-text search discovery and real-time auto-grading.',
+            'Handling high concurrency during live online exams and real-time push notifications while providing fast AI course recommendations and sub-50ms search discovery.',
         solutions:
-            'Implemented multi-tier caching (Redis + Caffeine) and Elasticsearch for fast discovery. Utilized Apache Kafka event streams for asynchronous background processing of student progress, quiz submissions, and analytics metrics.',
+            'Utilized Apache Kafka event streams for asynchronous notification delivery and analytics. Implemented multi-tier caching (Redis + Caffeine), Elasticsearch, and vector embeddings (pgvector) for AI-driven recommendations and ultra-fast search.',
         achievements: [
             'Architected scalable full-stack platform leveraging Java 21, Spring Boot 3.5, Next.js 16, and React 19',
-            'Reduced search latency to under 50ms using Elasticsearch 8 and Redis multi-level caching',
-            'Achieved real-time progress monitoring using Kafka event-driven streaming',
+            'Engineered AI Chatbot widget with course recommendation engine leveraging OpenAI & pgvector semantic search',
+            'Built end-to-end notification center with Kafka event streams and Firebase Cloud Messaging (FCM v12) push notifications',
+            'Reduced search & response latency to under 50ms using Elasticsearch 8 and Redis multi-level caching',
             'Configured multi-container orchestration with Docker Compose for seamless deployment',
         ],
         techStack: [
@@ -296,6 +298,9 @@ export const projects: ProjectItem[] = [
             'Redis',
             'Elasticsearch',
             'Kafka',
+            'OpenAI API',
+            'Firebase FCM',
+            'Cloudflare R2',
             'Docker',
         ],
         architecture: 'Full Stack / Monolithic',
