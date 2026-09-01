@@ -9,7 +9,14 @@
         <div class="about-grid">
             <div class="about-image-col" appScrollReveal>
                 <div class="about-image-wrapper">
-                    <img [src]="info.profileImage" [alt]="info.name + ' profile photo'" class="about-image" loading="lazy" />
+                    <img
+                        [src]="info.profileImage"
+                        [alt]="info.name + ' — Full Stack Software Engineer Profile Photo'"
+                        width="300"
+                        height="300"
+                        class="about-image"
+                        loading="lazy"
+                    />
                     <div class="image-decoration"></div>
                 </div>
             </div>

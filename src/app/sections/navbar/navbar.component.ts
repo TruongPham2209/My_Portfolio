@@ -1,5 +1,6 @@
 import { Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 import { navItems, NavItem, personalInfo } from '../../data/portfolio.data';
 
 @Component({
@@ -12,6 +13,7 @@ import { navItems, NavItem, personalInfo } from '../../data/portfolio.data';
 export class NavbarComponent {
     private platformId = inject(PLATFORM_ID);
     private document = inject(DOCUMENT);
+    private router = inject(Router);
 
     navItems: NavItem[] = navItems;
     activeSection = 'home';
@@ -25,7 +27,29 @@ export class NavbarComponent {
             return;
         }
         this.isScrolled = window.scrollY > 50;
-        this.updateActiveSection();
+        if (this.isHomePage()) {
+            this.updateActiveSection();
+        }
+    }
+
+    isHomePage(): boolean {
+        const url = this.router.url;
+        return url === '/' || url.startsWith('/#') || url.startsWith('/?');
+    }
+
+    navigateToSection(sectionId: string): void {
+        this.isMobileMenuOpen = false;
+        if (!this.isHomePage()) {
+            this.router.navigate(['/'], { fragment: sectionId }).then(() => {
+                if (isPlatformBrowser(this.platformId)) {
+                    setTimeout(() => {
+                        this.scrollTo(sectionId);
+                    }, 100);
+                }
+            });
+            return;
+        }
+        this.scrollTo(sectionId);
     }
 
     scrollTo(sectionId: string): void {

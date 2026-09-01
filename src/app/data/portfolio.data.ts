@@ -43,7 +43,9 @@ export interface ExperienceItem {
 }
 
 export interface ProjectItem {
+    slug: string;
     title: string;
+    subtitle?: string;
     overview: string;
     responsibilities: string[];
     challenges: string;
@@ -267,7 +269,9 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: ProjectItem[] = [
     {
+        slug: 'dev-edu-platform',
         title: 'Dev_Edu Platform',
+        subtitle: 'Enterprise Developer Education & Assessment System',
         overview:
             'Full-stack online developer education and assessment platform. Features interactive video lectures, real-time quiz examinations, AI chatbot course recommendations, Firebase FCM push notifications, multi-gateway payments, course tracking, and full-text search.',
         responsibilities: [
@@ -311,7 +315,9 @@ export const projects: ProjectItem[] = [
         featured: true,
     },
     {
+        slug: 'ecommerce-platform',
         title: 'E-Commerce Platform',
+        subtitle: 'High-Concurrency Event-Driven Microservices Architecture',
         overview:
             'Full-featured e-commerce system built on microservices architecture. Each service handles a separate business domain with inter-service communication via API Gateway, Kafka, and gRPC.',
         responsibilities: [
@@ -350,7 +356,9 @@ export const projects: ProjectItem[] = [
         featured: true,
     },
     {
+        slug: 'elearning-platform',
         title: 'E-Learning Platform',
+        subtitle: 'Scalable Distributed Learning Management System',
         overview:
             'Comprehensive online learning system focused on scalability, security, and user experience. Supports multi-role access (instructor, student, admin) with real-time class management.',
         responsibilities: [
@@ -378,7 +386,9 @@ export const projects: ProjectItem[] = [
         featured: true,
     },
     {
+        slug: 'real-estate-platform',
         title: 'Real Estate Platform',
+        subtitle: 'Cloud-Native Marketplace & Property Discovery System',
         overview:
             'Online marketplace for buying, selling, and renting real estate. Built with modern microservices architecture featuring event-driven communication and comprehensive service discovery.',
         responsibilities: [
@@ -406,7 +416,9 @@ export const projects: ProjectItem[] = [
         featured: false,
     },
     {
+        slug: 'booking-app',
         title: 'Booking App',
+        subtitle: 'High-Performance Travel & Hotel Reservation Engine',
         overview:
             'Travel booking application with fullstack architecture. Features hotel/room search, online booking management, and promotional programs with Redis-optimized performance.',
         responsibilities: [

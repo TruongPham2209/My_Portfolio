@@ -4,7 +4,7 @@
     role="banner"
 >
     <div class="navbar-inner">
-        <a class="navbar-brand" (click)="scrollTo('home')" tabindex="0" role="button" aria-label="Go to top">
+        <a class="navbar-brand" (click)="navigateToSection('home')" tabindex="0" role="button" aria-label="Go to top">
             <span class="brand-icon">&lt;/&gt;</span>
             <span class="brand-name">{{ name }}</span>
         </a>
@@ -13,8 +13,8 @@
             <button
                 *ngFor="let item of navItems"
                 class="nav-link"
-                [class.active]="activeSection === item.sectionId"
-                (click)="scrollTo(item.sectionId)"
+                [class.active]="isHomePage() && activeSection === item.sectionId"
+                (click)="navigateToSection(item.sectionId)"
                 [attr.aria-label]="'Navigate to ' + item.label"
             >
                 {{ item.label }}

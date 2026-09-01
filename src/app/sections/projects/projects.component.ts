@@ -1,5 +1,6 @@
 import { Component, HostListener, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 import { SectionHeadingComponent } from '../../shared/section-heading.component';
 import { projects, ProjectItem } from '../../data/portfolio.data';
@@ -7,7 +8,7 @@ import { projects, ProjectItem } from '../../data/portfolio.data';
 @Component({
     selector: 'app-projects',
     standalone: true,
-    imports: [CommonModule, ScrollRevealDirective, SectionHeadingComponent],
+    imports: [CommonModule, RouterLink, ScrollRevealDirective, SectionHeadingComponent],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss',
 })

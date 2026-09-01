@@ -1,10 +1,11 @@
 {
     "name": "my-portfolio",
     "version": "1.0.0",
+    "type": "module",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build",
+        "build": "ng build && node scripts/postbuild.js",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "serve:ssr": "node dist/my-portfolio/server/server.mjs"

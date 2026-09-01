@@ -12,7 +12,9 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+const angularApp = new AngularNodeAppEngine({
+    allowedHosts: ['localhost', '127.0.0.1', 'truongpham.dev'],
+});
 
 /**
  * Serve static files from /browser

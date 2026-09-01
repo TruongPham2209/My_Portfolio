@@ -71,6 +71,16 @@
     font-weight: 600;
 }
 
+.project-title-link {
+    color: var(--text-heading);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+
+    &:hover {
+        color: var(--accent-primary);
+    }
+}
+
 .view-details-hint {
     font-family: var(--font-mono);
     font-size: 0.8rem;
