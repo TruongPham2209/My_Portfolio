@@ -1,5 +1,5 @@
-import { Component, HostListener, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 import { SectionHeadingComponent } from '../../shared/section-heading.component';
 import { projects, ProjectItem } from '../../data/portfolio.data';
@@ -12,6 +12,9 @@ import { projects, ProjectItem } from '../../data/portfolio.data';
     styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent implements OnDestroy {
+    private platformId = inject(PLATFORM_ID);
+    private document = inject(DOCUMENT);
+
     projects: ProjectItem[] = projects;
     selectedProject: ProjectItem | null = null;
     isModalOpen = false;
@@ -26,12 +29,16 @@ export class ProjectsComponent implements OnDestroy {
         }
         this.selectedProject = project;
         this.isModalOpen = true;
-        document.body.style.overflow = 'hidden';
+        if (isPlatformBrowser(this.platformId)) {
+            this.document.body.style.overflow = 'hidden';
+        }
     }
 
     closeModal(): void {
         this.isModalOpen = false;
-        document.body.style.overflow = 'auto';
+        if (isPlatformBrowser(this.platformId)) {
+            this.document.body.style.overflow = 'auto';
+        }
         setTimeout(() => {
             if (!this.isModalOpen) {
                 this.selectedProject = null;
@@ -54,10 +61,14 @@ export class ProjectsComponent implements OnDestroy {
 
     openExternalLink(url: string, event: Event): void {
         event.stopPropagation();
-        window.open(url, '_blank');
+        if (isPlatformBrowser(this.platformId)) {
+            window.open(url, '_blank');
+        }
     }
 
     ngOnDestroy(): void {
-        document.body.style.overflow = 'auto';
+        if (isPlatformBrowser(this.platformId)) {
+            this.document.body.style.overflow = 'auto';
+        }
     }
 }

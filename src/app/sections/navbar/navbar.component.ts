@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { navItems, NavItem, personalInfo } from '../../data/portfolio.data';
 
 @Component({
@@ -10,6 +10,9 @@ import { navItems, NavItem, personalInfo } from '../../data/portfolio.data';
     styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+    private platformId = inject(PLATFORM_ID);
+    private document = inject(DOCUMENT);
+
     navItems: NavItem[] = navItems;
     activeSection = 'home';
     isScrolled = false;
@@ -18,13 +21,19 @@ export class NavbarComponent {
 
     @HostListener('window:scroll')
     onScroll(): void {
+        if (!isPlatformBrowser(this.platformId)) {
+            return;
+        }
         this.isScrolled = window.scrollY > 50;
         this.updateActiveSection();
     }
 
     scrollTo(sectionId: string): void {
         this.isMobileMenuOpen = false;
-        const element = document.getElementById(sectionId);
+        if (!isPlatformBrowser(this.platformId)) {
+            return;
+        }
+        const element = this.document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -35,9 +44,12 @@ export class NavbarComponent {
     }
 
     private updateActiveSection(): void {
+        if (!isPlatformBrowser(this.platformId)) {
+            return;
+        }
         const sections = this.navItems.map((item) => item.sectionId);
         for (let i = sections.length - 1; i >= 0; i--) {
-            const el = document.getElementById(sections[i]);
+            const el = this.document.getElementById(sections[i]);
             if (el) {
                 const rect = el.getBoundingClientRect();
                 if (rect.top <= 120) {
