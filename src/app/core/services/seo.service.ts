@@ -22,8 +22,8 @@ export class SeoService {
     private metaService = inject(Meta);
     private document = inject(DOCUMENT);
 
-    private readonly siteUrl = 'https://truongpham.dev';
-    private readonly defaultImage = 'https://truongpham.dev/images/me.JPG';
+    private readonly siteUrl = 'https://truong-pham-portfolio.vercel.app';
+    private readonly defaultImage = 'https://truong-pham-portfolio.vercel.app/images/me.JPG';
     private readonly author = personalInfo.name;
 
     setSeoData(config: SeoConfig): void {
@@ -47,7 +47,9 @@ export class SeoService {
         this.metaService.updateTag({ property: 'og:url', content: config.canonicalUrl }, "property='og:url'");
         this.metaService.updateTag({ property: 'og:type', content: config.ogType || 'website' }, "property='og:type'");
         this.metaService.updateTag({ property: 'og:image', content: config.ogImage || this.defaultImage }, "property='og:image'");
+        this.metaService.updateTag({ property: 'og:image:alt', content: `${config.title}` }, "property='og:image:alt'");
         this.metaService.updateTag({ property: 'og:site_name', content: `${this.author} — Portfolio` }, "property='og:site_name'");
+        this.metaService.updateTag({ property: 'og:locale', content: 'en_US' }, "property='og:locale'");
 
         // Twitter Card Meta Tags
         this.metaService.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
@@ -65,10 +67,10 @@ export class SeoService {
     }
 
     updateHomeSeo(): void {
-        const title = `${personalInfo.name} — ${personalInfo.title} | Distributed Systems & Web Engineering`;
-        const description = `${personalInfo.name} is a ${personalInfo.title} specializing in Java Spring Boot, .NET Core, Angular, Next.js, Kafka, Redis, and Cloud-Native scalable architectures.`;
+        const title = `${personalInfo.name} — ${personalInfo.title}`;
+        const description = `Portfolio of ${personalInfo.name} — Software Engineer specializing in Java Spring Boot, .NET Core, Angular, Next.js, Apache Kafka, and Cloud-Native scalable architectures.`;
         const keywords =
-            'Full Stack Software Engineer, Software Engineer, Backend Engineer, Angular, React, Java, Spring Boot, .NET Core, Next.js, TypeScript, Microservices, Kafka, Redis, PostgreSQL, AWS, Docker, Truong Pham';
+            'Software Engineer, Full Stack Developer, Backend Engineer, Java Spring Boot, .NET Core, Angular, Next.js, Apache Kafka, Redis, PostgreSQL, AWS, Microservices Architecture, Truong Pham, Software Developer Ho Chi Minh City';
 
         const jsonLd = [
             {
@@ -76,8 +78,10 @@ export class SeoService {
                 '@type': 'Person',
                 '@id': `${this.siteUrl}/#person`,
                 name: personalInfo.name,
-                jobTitle: personalInfo.title,
-                url: this.siteUrl,
+                alternateName: ['Pham Truong', 'Truong Pham (Dev)'],
+                jobTitle: 'Software Engineer',
+                description: 'Software Engineer specializing in Java Spring Boot, .NET Core, Angular, Next.js, Apache Kafka, and Cloud-Native scalable architectures.',
+                url: `${this.siteUrl}/`,
                 image: `${this.siteUrl}${personalInfo.profileImage}`,
                 sameAs: [personalInfo.github, personalInfo.linkedin, personalInfo.facebook],
                 address: {
@@ -85,16 +89,23 @@ export class SeoService {
                     addressLocality: 'Ho Chi Minh City',
                     addressCountry: 'Vietnam',
                 },
+                alumniOf: {
+                    '@type': 'EducationalOrganization',
+                    name: 'Ton Duc Thang University (TDTU)',
+                    url: 'https://www.tdtu.edu.vn',
+                },
                 email: `mailto:${personalInfo.email}`,
                 knowsAbout: [
                     'Software Engineering',
                     'Full Stack Web Development',
+                    'Backend Engineering',
                     'Distributed Systems',
                     'Microservices Architecture',
                     'Java Spring Boot',
                     '.NET Core',
                     'Angular',
                     'Next.js & React',
+                    'TypeScript',
                     'Apache Kafka',
                     'Redis Caching',
                     'PostgreSQL & Database Optimization',
@@ -106,18 +117,19 @@ export class SeoService {
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
                 '@id': `${this.siteUrl}/#website`,
-                url: this.siteUrl,
-                name: `${personalInfo.name} Portfolio`,
+                url: `${this.siteUrl}/`,
+                name: `${personalInfo.name} — Portfolio`,
                 description: personalInfo.tagline,
                 publisher: {
                     '@id': `${this.siteUrl}/#person`,
                 },
+                inLanguage: 'en',
             },
             {
                 '@context': 'https://schema.org',
                 '@type': 'ProfilePage',
                 '@id': `${this.siteUrl}/#profilepage`,
-                url: this.siteUrl,
+                url: `${this.siteUrl}/`,
                 name: title,
                 mainEntity: {
                     '@id': `${this.siteUrl}/#person`,
@@ -129,9 +141,9 @@ export class SeoService {
             title,
             description,
             keywords,
-            canonicalUrl: this.siteUrl,
+            canonicalUrl: `${this.siteUrl}/`,
             ogImage: `${this.siteUrl}${personalInfo.profileImage}`,
-            ogType: 'profile',
+            ogType: 'website',
             jsonLd,
         });
     }
@@ -140,7 +152,7 @@ export class SeoService {
         const canonicalUrl = `${this.siteUrl}/projects/${project.slug}`;
         const title = `${project.title} — ${project.subtitle || 'Software Architecture & Case Study'} | ${personalInfo.name}`;
         const description = `${project.overview.substring(0, 155)}...`;
-        const keywords = `${project.techStack.join(', ')}, ${project.title}, ${project.architecture} Architecture, Full Stack Case Study, ${personalInfo.name}`;
+        const keywords = `${project.techStack.join(', ')}, ${project.title}, ${project.architecture} Architecture, Software Engineering Case Study, Full Stack, Backend, ${personalInfo.name}`;
         const ogImage = project.thumbnail.startsWith('http') ? project.thumbnail : `${this.siteUrl}${project.thumbnail}`;
 
         const jsonLd = [
@@ -155,8 +167,9 @@ export class SeoService {
                 image: ogImage,
                 author: {
                     '@type': 'Person',
+                    '@id': `${this.siteUrl}/#person`,
                     name: personalInfo.name,
-                    url: this.siteUrl,
+                    url: `${this.siteUrl}/`,
                 },
                 keywords: project.techStack.join(', '),
                 url: canonicalUrl,
@@ -170,7 +183,7 @@ export class SeoService {
                         '@type': 'ListItem',
                         position: 1,
                         name: 'Home',
-                        item: this.siteUrl,
+                        item: `${this.siteUrl}/`,
                     },
                     {
                         '@type': 'ListItem',

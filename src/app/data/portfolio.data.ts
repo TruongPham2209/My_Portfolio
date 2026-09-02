@@ -73,8 +73,8 @@ export interface EducationItem {
 
 export const personalInfo: PersonalInfo = {
     name: 'Truong Pham',
-    title: 'Full Stack Software Engineer',
-    tagline: 'Building scalable web applications, distributed systems, and cloud-native software.',
+    title: 'Software Engineer | Full Stack & Distributed Systems',
+    tagline: 'Building scalable web applications, distributed systems, and cloud-native software architectures.',
     email: 'phamtruong04112004@gmail.com',
     phone: '+84 379497587',
     location: 'Ho Chi Minh City, Vietnam',

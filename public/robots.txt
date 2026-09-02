@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://truongpham.dev/sitemap.xml
+Sitemap: https://truong-pham-portfolio.vercel.app/sitemap.xml
 

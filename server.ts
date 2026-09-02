@@ -13,7 +13,7 @@ const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine({
-    allowedHosts: ['localhost', '127.0.0.1', 'truongpham.dev'],
+    allowedHosts: ['localhost', '127.0.0.1', 'truong-pham-portfolio.vercel.app', 'truongpham.dev'],
 });
 
 /**
